@@ -12,6 +12,7 @@ export default function HTML(props) {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <title>CommCon Virtual 2020</title>
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
