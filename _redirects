@@ -1,8 +1,0 @@
-http://commcon.xyz https://2020.commcon.xyz 301!
-https://commcon.xyz https://2020.commcon.xyz 301!
-
-http://commcon.xyz/* https://2020.commcon.xyz/:splat 301!
-https://commcon.xyz/* https://2020.commcon.xyz/:splat 301!
-
-http://www.commcon.xyz/* https://2020.commcon.xyz/:splat 301!
-https://www.commcon.xyz/* https://2020.commcon.xyz/:splat 301!
