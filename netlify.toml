@@ -1,4 +1,12 @@
 [[redirects]]
+  from = "http://commcon.xyz"
+  to = "https://2020.commcon.xyz"
+
+[[redirects]]
+  from = "https://commcon.xyz"
+  to = "https://2020.commcon.xyz"
+
+[[redirects]]
   from = "http://commcon.xyz/*"
   to = "https://2020.commcon.xyz/:splat"
 
