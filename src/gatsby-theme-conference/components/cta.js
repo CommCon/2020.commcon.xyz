@@ -1,8 +1,5 @@
 /** @jsx jsx */
 import { jsx, Container } from 'theme-ui'
-import {
-    Button
-  } from 'gatsby-theme-conference'
 
 export default props =>
   <div

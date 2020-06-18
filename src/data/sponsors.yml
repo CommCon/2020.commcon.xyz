@@ -3,48 +3,68 @@
   url: https://www.teluu.com/
   logo: /assets/sponsors/teluu.svg
   tier: Platinum
+  twitter: ""
+  github: ""
 - id: voxbone
   name: Voxbone
   url: https://www.voxbone.com/
   logo: /assets/sponsors/voxbone.svg
   tier: Platinum
+  twitter: ""
+  github: ""
 - id: cyara
   name: Cyara
   url: https://cyara.com/
   logo: /assets/sponsors/cyara.svg
   tier: Platinum
+  twitter: ""
+  github: ""
 - id: newvector
   name: New Vector
   url: https://vector.im/
   logo: /assets/sponsors/newvector.svg
   tier: Gold
+  twitter: ""
+  github: ""
 - id: vonage
   name: Vonage
   url: https://developer.nexmo.com/
   logo: /assets/sponsors/vonage.svg
   tier: Gold
+  twitter: ""
+  github: ""
 - id: sangoma
   name: Sangoma
   url: https://www.sangoma.com/open-source/
   logo: /assets/sponsors/sangoma.svg
   tier: Gold
+  twitter: ""
+  github: ""
 - id: ctel
   name: Telviva
   url: https://www.telviva.co.za/
   logo: /assets/sponsors/telviva.svg
   tier: Gold
+  twitter: ""
+  github: ""
 - id: loway
   name: Loway
   url: https://www.loway.ch/
   logo: /assets/sponsors/loway.svg
   tier: Gold
+  twitter: ""
+  github: ""
 - id: aplisay
   name: Aplisay
   url: https://www.aplisay.com/
   logo: /assets/sponsors/aplisay.svg
   tier: Silver
+  twitter: ""
+  github: ""
 - id: qxip
   name: QXIP
   url: https://www.teluu.com/
   logo: /assets/sponsors/qxip.svg
   tier: Community
+  twitter: ""
+  github: ""

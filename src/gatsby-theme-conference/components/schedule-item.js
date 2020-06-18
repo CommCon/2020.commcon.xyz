@@ -1,5 +1,12 @@
 /** @jsx jsx */
 import { jsx, Styled, Flex } from 'theme-ui'
+import {
+  Youtube
+} from 'react-feather'
+
+import {
+  IconLink,
+} from 'gatsby-theme-conference'
 
 export default ({
   date,
@@ -7,6 +14,7 @@ export default ({
   speaker,
   title,
   description,
+  youtube
 }) =>
   <Flex
     sx={{
@@ -45,4 +53,11 @@ export default ({
         {description}
       </Styled.p>
     </div>
+    <Flex mx={-2}>
+      {youtube && (
+        <IconLink href={youtube}>
+          <Youtube />
+        </IconLink>
+      )}
+    </Flex>
   </Flex>

@@ -10,6 +10,7 @@
   image: /assets/speakers/tonygooch.jpg
   bio: Tony Gooch is our adventurous product manager.   He's been integrating all sorts of technology services since 2000.  He's passionate about all forms of communications and thinks the best way to do this in tech is to use open standards, ensuring that systems can talk to each other effectively.    First major integration success was launching the first commercial Voice Based Location aware service for Orange UK when he was 23 as development lead, having gone on to product management he's built MVNO platforms from the ground up, and has integrated more than a 100 products in the last 10 years of product roles.
   company: Voxbone
+  linkedin: https://www.linkedin.com/in/tonyigooch/
 - id: david
   name: David Duffett
   image: /assets/speakers/davidduffett.jpg

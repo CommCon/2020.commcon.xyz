@@ -10,7 +10,7 @@
     Communication as a core principle is being able to get ideas out there. However, there is a risk that if we’re not aware of some of the trends being taken up, we’ll end up finding ourselves back to a walled garden.
 
     Telecoms as an industry has historically been one of the most open ecosystems with interoperability being achievable.  We’re now in a position where this industry has been leapfrogged by huge strives in the Cloud marketplace, to completely revolutionize the interconnectivity of systems.
-- date: 2019-04-15 09:45
+- date: 2019-04-15 09:46
   title: SFrame
   speaker: sergio
   description: |
@@ -23,7 +23,7 @@
     live events (e.g., IETF meetings) via WebRTC, facilitating remote participation.
     Then the world changed, and so must we. This talk will describe some of the strategies
     we followed to host completely virtual events using Janus.
-- date: 2019-04-16 09:00
+- date: 2019-04-16 10:31
   title: "Pion: Solving Production RTC problems with composable Go libraries"
   speaker: sean
   description: |
@@ -31,14 +31,14 @@
     Clients). Instead lets talk about the unique production problems. Come learn why
     Pion is the software for large scale broadcasting, self driving cars and robots.  This
     is what developers do when real world constraints hit.
-- date: 2019-04-16 09:00
+- date: 2019-04-16 10:32
   title: Kamailio for RTC Stability, Scaling, and Security
   speaker: fred
   description: |
     Kamailio, the Open Source SIP Server, enables communication across SIP
     and WebRTC allowing you to build whatever your heart desires. Kamailio creates
     a solid foundation allowing you to build and grow as needed.
-- date: 2019-04-16 09:00
+- date: 2019-04-16 10:33
   title: "jambonz: the \"little\" open source CPaaS"
   speaker: davehorton
   description: |
@@ -46,7 +46,7 @@
     infrastructure.  It is targeted at CSPs and privacy-conscious enterprises.  It
     is modest in goals, small in size, simple to deploy, and easy to get your arms
     around.  This talk will describe why it's needed and give a demo.
-- date: 2019-04-16 09:00
+- date: 2019-04-16 10:34
   title: How to test a webRTC service on your own....
   speaker: tim
   description: |
@@ -55,20 +55,20 @@
 
     I'll show how you can (ab)use serverless cloud technology to simulate
     many users of your service, at a surprisingly low cost.
-- date: 2019-04-16 09:00
+- date: 2019-04-16 10:35
   title: Let the Geek Speak... via Video!
   speaker: david
   description: |
     Making presentations via video meeting and webinar tools has become very popular indeed!  Many presenters make cringe-inducing mistakes and therefore lose any power that might have been in their message.
     This session shows where people go wrong - it all starts way before the presentation itself...
-- date: 2019-04-16 09:00
+- date: 2019-04-16 10:36
   title: HOMER for webRTC
   speaker: lorenzomangani
   description: |
     HOMER is there for you, be it VoIP or RTC or your own protocols. Learn
     how to install and leverage release 7.7 for your stack in minutes and how to integrate
     its data  with your services.
-- date: 2019-04-16 09:00
+- date: 2019-04-16 10:37
   title: Building a Bigger Badder B2BUA
   speaker: phillip
   description: |
@@ -76,14 +76,14 @@
     have yielded some impressive results.  This talk will cover what tasks B2BUA handles
     and how Golang allows for these new efficiencies and the quantified results from
     our initial testing of the new component.
-- date: 2019-04-16 09:00
+- date: 2019-04-16 10:38
   title: "Carrier-Grade: what does it mean to us, practically speaking?"
   speaker: max
   description: |
     Our belief is that software reliability is not just an "another feature"
     or "selling point" but ideology and the process. We will share few things and
     interesting techniques that we have discovered while implementing this vision.
-- date: 2019-04-16 09:00
+- date: 2019-04-16 10:39
   title: RTC and COVID-19 - the true story
   speaker: chad
   description: |

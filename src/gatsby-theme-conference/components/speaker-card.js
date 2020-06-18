@@ -3,7 +3,9 @@ import { Styled, jsx, Flex } from 'theme-ui'
 import {
   Twitter,
   GitHub,
-  Instagram
+  Instagram,
+  Linkedin,
+  ExternalLink
 } from 'react-feather'
 
 import {
@@ -15,35 +17,43 @@ import {
 export default ({
   id,
   name,
-  logo,
+  image,
+  bio,
   company,
-  url,
-  github,
-  instagram,
   twitter,
+  instagram,
+  github,
+  linkedin,
+  url,
   ...props
 }) =>
   <Card
     {...props}>
     <BackgroundImage
-      src={logo}
+      src={image}
       sx={{
         mb: 3,
-        backgroundSize: 'contain',
-        backgroundRepeat: 'no-repeat'
       }}
     />
-    <Styled.a
-      href={url}
-      title={name}
+    <Styled.h3>
+      {name}
+    </Styled.h3>
+    <Styled.div
       sx={{
-        textDecoration: 'none',
-        color: '#000' //bodge
+        fontSize: 1,
+        fontWeight: 'bold',
+        mb: 2,
       }}>
-      <Styled.h3>
-        {name}
-      </Styled.h3>
-    </Styled.a>
+      {company}
+    </Styled.div>
+    <Styled.p
+      sx={{
+        mb: 0,
+      }}
+      // dangerouslySetInnerHTML={{ __html: paragraphs(bio) }}
+    >
+      {bio}
+    </Styled.p>
     <Flex mx={-2}>
       {twitter && (
         <IconLink href={twitter}>
@@ -58,6 +68,16 @@ export default ({
       {instagram && (
         <IconLink href={instagram}>
           <Instagram />
+        </IconLink>
+      )}
+      {linkedin && (
+        <IconLink href={linkedin}>
+          <Linkedin />
+        </IconLink>
+      )}
+      {url && (
+        <IconLink href={url}>
+          <ExternalLink />
         </IconLink>
       )}
     </Flex>

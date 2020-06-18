@@ -74,10 +74,17 @@ index d0506b6..204100b 100644
                {days[date].map(item => (
                  <li key={item.time}>
 diff --git a/node_modules/gatsby-theme-conference/src/components/speaker-card.js b/node_modules/gatsby-theme-conference/src/components/speaker-card.js
-index 111dc21..a949321 100644
+index 111dc21..9e34bf6 100644
 --- a/node_modules/gatsby-theme-conference/src/components/speaker-card.js
 +++ b/node_modules/gatsby-theme-conference/src/components/speaker-card.js
-@@ -7,6 +7,7 @@ import {
+@@ -2,11 +2,13 @@
+ import { Styled, jsx, Flex } from 'theme-ui'
+ import {
+   Twitter,
+-  GitHub
++  GitHub,
++  Instagram
+ } from 'react-feather'
  import BackgroundImage from './background-image'
  import Card from './card'
  import IconLink from './icon-link'
@@ -85,19 +92,36 @@ index 111dc21..a949321 100644
  
  export default ({
    id,
-@@ -40,9 +41,9 @@ export default ({
+@@ -15,6 +17,7 @@ export default ({
+   bio,
+   company,
+   twitter,
++  instagram,
+   github,
+   ...props
+ }) =>
+@@ -40,7 +43,9 @@ export default ({
      <Styled.p
        sx={{
          mb: 0,
 -      }}>
--      {bio}
--    </Styled.p>
 +      }}
-+      dangerouslySetInnerHTML={{ __html: paragraphs(bio) }}
-+    />
++      // dangerouslySetInnerHTML={{ __html: paragraphs(bio) }}
++    >
+       {bio}
+     </Styled.p>
      <Flex mx={-2}>
-       {twitter && (
-         <IconLink href={twitter}>
+@@ -54,5 +59,10 @@ export default ({
+           <GitHub />
+         </IconLink>
+       )}
++      {instagram && (
++        <IconLink href={instagram}>
++          <Instagram />
++        </IconLink>
++      )}
+     </Flex>
+   </Card>
 diff --git a/node_modules/gatsby-theme-conference/src/components/speakers.js b/node_modules/gatsby-theme-conference/src/components/speakers.js
 index 3c7f188..c15d8bd 100644
 --- a/node_modules/gatsby-theme-conference/src/components/speakers.js
@@ -112,10 +136,10 @@ index 3c7f188..c15d8bd 100644
          {speakers.map(speaker => (
            <SpeakerCard
 diff --git a/node_modules/gatsby-theme-conference/src/components/sponsors.js b/node_modules/gatsby-theme-conference/src/components/sponsors.js
-index 5ed854a..ceb99e0 100644
+index 5ed854a..ae9d6c4 100644
 --- a/node_modules/gatsby-theme-conference/src/components/sponsors.js
 +++ b/node_modules/gatsby-theme-conference/src/components/sponsors.js
-@@ -2,33 +2,53 @@
+@@ -2,33 +2,52 @@
  import { jsx, Styled, Container } from 'theme-ui'
  import SectionHeading from './section-heading'
  import FlexList from './flex-list'
@@ -150,7 +174,6 @@ index 5ed854a..ceb99e0 100644
 -          </Card>
 +}) => {
 +  const tiers = groupBy(sponsors, 'tier')
-+  console.log(tiers);
 +  return(
 +    <div
 +      id='sponsors'
@@ -196,7 +219,7 @@ index 5ed854a..ceb99e0 100644
 +  )
 +          }
 diff --git a/node_modules/gatsby-theme-conference/src/components/venue.js b/node_modules/gatsby-theme-conference/src/components/venue.js
-index 69d899e..f23a825 100644
+index 69d899e..1d775f5 100644
 --- a/node_modules/gatsby-theme-conference/src/components/venue.js
 +++ b/node_modules/gatsby-theme-conference/src/components/venue.js
 @@ -1,6 +1,8 @@
@@ -208,16 +231,26 @@ index 69d899e..f23a825 100644
  
  export default ({
    title,
-@@ -52,12 +54,12 @@ export default ({
-           <Styled.p
-             sx={{
-               my: 0
+@@ -49,15 +51,19 @@ export default ({
+             }}>
+             {address}
+           </Styled.p>
+-          <Styled.p
+-            sx={{
+-              my: 0
 -            }}>
 -            {description}
 -          </Styled.p>
-+            }}
-+            dangerouslySetInnerHTML={{ __html: paragraphs(description) }}
-+          />
++          {description && (
++            <Styled.p
++              sx={{
++                my: 0
++              }}
++              // dangerouslySetInnerHTML={{ __html: paragraphs(description) }}
++            >
++              {description}
++            </Styled.p>
++          )}
            <div>
 -            <Styled.a href={mapURL}>View Map</Styled.a>
 -            {' | '}
@@ -247,6 +280,38 @@ index bce310c..1da9221 100644
              <List>
                {days[date].map(item => (
                  <li key={item.time}>
+diff --git a/node_modules/gatsby-theme-conference/src/pages/index.js b/node_modules/gatsby-theme-conference/src/pages/index.js
+index 91b3290..f3f4e1f 100644
+--- a/node_modules/gatsby-theme-conference/src/pages/index.js
++++ b/node_modules/gatsby-theme-conference/src/pages/index.js
+@@ -34,6 +34,8 @@ export const pageQuery = graphql`
+           company
+           twitter
+           github
++          linkedin
++          url
+         }
+       }
+     }
+@@ -45,6 +47,8 @@ export const pageQuery = graphql`
+           url
+           logo
+           tier
++          twitter
++          github
+         }
+       }
+     }
+@@ -79,9 +83,7 @@ export const pageQuery = graphql`
+       venue {
+         title
+         address
+-        description
+         url
+-        mapURL
+         image
+       }
+     }
 diff --git a/node_modules/gatsby-theme-conference/src/use-site-metadata.js b/node_modules/gatsby-theme-conference/src/use-site-metadata.js
 index cca40bf..810ed69 100644
 --- a/node_modules/gatsby-theme-conference/src/use-site-metadata.js
