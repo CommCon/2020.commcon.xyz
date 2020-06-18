@@ -5,8 +5,8 @@ export default {
   colors: {
     ...theme.colors,
     primary: 'orange',
-    secondary: '#407',
-    muted: '#f6eeff'
+    secondary: '#000',
+    muted: '#fff'
   },
   fonts: {
     body: 'Poppins, sans-serif',

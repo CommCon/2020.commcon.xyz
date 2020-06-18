@@ -8,6 +8,7 @@ import {
 import {
   Button,
   NavLink,
+  DesktopOnly
 } from 'gatsby-theme-conference'
 
 
@@ -24,13 +25,19 @@ export default props =>
       <Styled.img
         width='32'
         height='32'
-        src='https://notebook.jxnblk.com/flower.png'
+        src='/assets/cc.svg'
       />
       <div sx={{ mx: 1 }} />
       CommCon Virtual 2020
     </NavLink>
+    <DesktopOnly>
+      <NavLink as={Link} to='/#speakers'>Speakers</NavLink>
+      <NavLink as={Link} to='/#schedule'>Schedule</NavLink>
+      <NavLink as={Link} to='/#venue'>Venue</NavLink>
+      <NavLink as={Link} to='/#sponsors'>Sponsors</NavLink>
+    </DesktopOnly>
     <div sx={{ mx: 'auto' }} />
-    {/* <Button href='#'>
-      Buy Tickets
-    </Button> */}
+    <Button href='#purchase'>
+      Attend
+    </Button>
   </Fragment>

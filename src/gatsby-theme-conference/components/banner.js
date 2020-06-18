@@ -26,7 +26,7 @@ export default props =>
           <Styled.img
             width='128'
             height='128'
-            src='https://notebook.jxnblk.com/flower.png'
+            src='/assets/cc.svg'
           />
         </div>
         <div sx={{ px: 4 }}>
@@ -37,11 +37,13 @@ export default props =>
             sx={{
               fontSize: 3,
             }}>
-            Sommething Something Amazing
+            20 Sessions over 5 days, with world class experts in VoIP and WebRTC
+            <br />
+            13<sup>th</sup> - 17<sup>th</sup> July 2020
           </Styled.p>
-          {/* <Button href='#purchase'>
-            Buy Tickets
-          </Button> */}
+          <Button href='#purchase'>
+            Attend
+          </Button>
         </div>
       </Flex>
     </Container>

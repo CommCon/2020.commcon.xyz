@@ -6,12 +6,16 @@
     "clean": "rm -rf .cache public",
     "start": "gatsby develop",
     "build": "gatsby build",
-    "now-build": "gatsby build --prefix-paths"
+    "now-build": "gatsby build --prefix-paths",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "gatsby": "^2.1.19",
     "gatsby-plugin-google-fonts": "^1.0.0",
     "gatsby-theme-conference": "^0.1.1",
+    "lines-to-paragraphs": "^1.0.3",
+    "patch-package": "^6.2.2",
+    "postinstall-postinstall": "^2.1.0",
     "react": "^16.8.3",
     "react-dom": "^16.8.3"
   }

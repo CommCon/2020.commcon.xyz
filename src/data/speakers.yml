@@ -1,15 +1,168 @@
-- id: jay
-  name: Jay Gatsby
-  image: https://upload.wikimedia.org/wikipedia/en/4/42/JayGatsby1.jpg
-  bio: A mysterious millionaire
-  company: Gatsby
-  twitter: gatsbyjs
-  github: gatsbyjs
-- id: daisy
-  name: Daisy Buchanan
-  _image: https://upload.wikimedia.org/wikipedia/en/d/df/Daisy_Buchanan.png
-  image: https://compote.slate.com/images/589ce9de-a6be-4167-b1ef-59be7f707ed6.jpg
-  bio: Courteous driver
-  company: Gatsby
-  twitter: gatsbyjs
-  github: gatsbyjs
+- id: matthew
+  name: Matthew Hodgson
+  image: /assets/speakers/matthewhodgson.jpg
+  bio: Matthew is tech lead of Matrix.org, and spends way too much time trying to ensure Matrix is successful as the leading open decentralised communications protocol and network.
+  company: New Vector
+  twitter: ara4n
+  github: ara4n
+- id: tony
+  name: Tony Gooch
+  image: /assets/speakers/tonygooch.jpg
+  bio: Tony Gooch is our adventurous product manager.   He's been integrating all sorts of technology services since 2000.  He's passionate about all forms of communications and thinks the best way to do this in tech is to use open standards, ensuring that systems can talk to each other effectively.    First major integration success was launching the first commercial Voice Based Location aware service for Orange UK when he was 23 as development lead, having gone on to product management he's built MVNO platforms from the ground up, and has integrated more than a 100 products in the last 10 years of product roles.
+  company: Voxbone
+- id: david
+  name: David Duffett
+  image: /assets/speakers/davidduffett.jpg
+  bio: David is a Geek that has been publicly Speaking and teaching for more than
+    25 years, from London to Los Angeles, Berlin to Beirut, Kingston to Kuala Lumpur,
+    Mumbai to Melbourne, and Mexico City! He loves communications technology and having
+    served as the Worldwide Community Director for the Asterisk® project for nearly
+    7 years, he now acts as the Worldwide Community Advocate at SignalWire, Inc.,
+    the company behind the FreeSWITCH project. David has always been grateful to
+    the Geeks that build the various technologies he speaks about, and he wants to
+    give back – by helping Geeks to Speak!
+  company: Let the Geek Speak
+  twitter: dduffett
+  url: http://www.letthegeekspeak.com
+- id: tim
+  name: Tim Panton
+  image: /assets/speakers/timpanton.jpg
+  bio: Tim is a WebRTC expert, having contributed to the standards and worked on
+    several WebRTC based products. He's currently enhancing |pipe|'s cleanroom
+    webRTC stack for small devices and porting it onto all manner of IoT devices,
+    including security cameras, baby monitors and self driving robots. He's
+    also building low infrastructure alternatives to Zoom for niche usecases (podcasters,
+    book clubs, SMS users etc) Past projects have included training simulation
+    for oil platforms, time management of a space telescope and running a mobile phone
+    network at the Burning Man festival.
+  company: "|pipe|"
+  twitter: steely_glint
+  github: steely-glint
+  url: https://pi.pe
+- id: sean
+  name: Sean DuBois
+  image: /assets/speakers/seandubois.jpg
+  bio: Pion Mantainer
+  company: Pion
+  twitter: _pion
+  github: pion
+  url: https://pion.ly/
+- id: chad
+  name: Chad Hart
+  image: /assets/speakers/chadhart.jpg
+  bio: Chad is a real time communications market analyst and consultant at cwh.consulting, a product management, marketing, and strategy advisory. One of Chad's recent projects was Head of Strategic Products at Voxbone where he ran a new product incubator that launched more than 10 new product experiments that included WebRTC and CPaaS APIs, Viber integration, bringing Emergency Service 911 calling to Alexa, and speech analytics. Chad has served in senior product and intelligence roles at Dialogic, Oracle, and Acme Packet (acquired by Oracle).
+  company: CWH Consulting
+  twitter: chadwallacehart
+  github: chadwallacehart
+  url: https://cwh.consulting/
+- id: fred
+  name: Fred Posner
+  image: /assets/speakers/fredposner.jpg
+  bio: After working with solutions such as Acme Packet, Broadsoft, Cisco, and others,
+    Fred discovered Asterisk and OpenSER, quickly embraced using open source software
+    in telecommunication. A large (_yes, it's a fat joke_) proponent of Asterisk and
+    Kamailio, Fred currently provides Kamailio / VoIP consultation services through
+    LOD.com and The Palner Group, Inc. From 2010 to 2020, Fred helped his
+    incredible wife run a family bakery in Florida. When not working on SIP, he's
+    trying to make his daughter smile.
+  company: LOD.com
+  twitter: fredposner
+  github: fredposner
+  url: https://lod.com
+- id: lorenzomangani
+  name: Lorenzo Mangani
+  image: /assets/speakers/lorenzomangani.png
+  bio: Formerly a Sound Engineer, Lorenzo has been deeply involved with telecommunications
+    and VoIP for well over a decade and has contributed ideas, design concepts and
+    code to many voice-related Open-Source and commercial RTC projects while specializing
+    in active and passive monitoring solutions with his unique team @sipcapture
+  company: QXIP
+  twitter: qxip
+  github: qxip
+  url: http://qxip.net
+- id: davehorton
+  name: Dave Horton
+  image: /assets/speakers/davehorton.jpg
+  bio: I've been "doing" VoIP since 2000, when I founded a SIP application server
+    company (Pactolus Communication Software) that made and sold a commercial software-based
+    application server/app suite to carriers and communication service providers worldwide.
+    \ With customers ranging from Webex to Deutsche Telekom and many successful deployments
+    under my belt, I learned quite a bit but increasingly saw both the challenges
+    and opportunities created by the disruption that was the open source movement.
+    While on an extended "adventure sabbatical" a few years ago, mostly
+    spent in beautiful Pembrokeshire Wales,  I decided to create drachtio, an open
+    source framework that at once combined my desires to work in the open source movement
+    \ and to find a useful vessel in which to invest the knowledge that I had gained
+    over the years in building and deploying VoIP networks and applications that had
+    to be held to the highest standards of performance and reliability. I love
+    writing software both for the web and VoIP and am enjoying being a part of working
+    to see these two worlds come together.  I'm also an avid rugby fan, and have enjoyed
+    playing for teams ranging from the US national team in my heyday to the 5th division
+    St Davids Saints more recently.
+  company: Beachdog Networks
+  twitter: davehorton
+  github: jambonz
+- id: max
+  name: Max DH
+  image: /assets/speakers/max.png
+  bio: Long term OpenSIPS / Kamailio / FreeBSD contributor, open source aficionado.
+    Author and maintainer of few open source projects (RTPproxy, Sippy B2BUA etc).
+  company: Sippy Software, Inc.
+  twitter: sobomax
+  github: sippy
+- id: phillip
+  name: Phillip Ma
+  image: /assets/speakers/phillipma.jpg
+  bio: Phillip Ma began in the VoIP space in 2017 when he joined Sippy Software.  In
+    this role he has directed what features and changes will be implemented in our
+    commercially available software releases.  After 12 years of experience in software
+    development he has actively worked on building out features and changes that bring
+    big changes to the industry as a whole.
+  company: Sippy Software, Inc.
+  twitter: phillipma
+  github: sippy
+- id: lorenzominiero
+  name: Lorenzo Miniero
+  image: /assets/speakers/lorenzominiero.jpg
+  bio: Lorenzo Miniero is the chairman and co-founder of Meetecho, a company providing
+    consulting services on everything related to real-time multimedia, while also
+    regularly providing streaming and remote participation services for well known
+    events around the world (e.g., IETF and ACM). Lorenzo received his degree and
+    Ph.D. at the Computer Science Department of the University of Napoli Federico
+    II, where he started working on multimedia conferencing and met the colleagues
+    with whom he co-founded Meetecho as an academic spin-off. He is an active contributor
+    to the Internet Engineering Task Force (IETF) standardization activities, especially
+    in the framework of real-time multimedia applications. He is most known as the
+    author of the Janus WebRTC Server, an open source WebRTC server-side implementation.
+  company: Meetecho
+  twitter: elminiero
+  github: lminiero
+# - id: emil
+#   name: Emil
+#   image: /assets/speakers/emil.jpg
+#   bio: Emil
+#   company: 8x8
+#   twitter: emil
+#   github: emil
+# - id: li-tal
+#   name: li-tal
+#   image: /assets/speakers/li-tal.jpg
+#   bio: Li-Tal
+#   company: Facebook
+#   twitter: lital
+#   github: lital
+- id: sergio
+  name: Sergio Garcia Murillo
+  image: /assets/speakers/sergio.jpeg
+  bio: Media Server Lead at CoSMo Software, founder of Medooze . Tech enthusiast and WebRTC expert, father of Leo and Mia. Mathematician.
+  company: Cosmo
+  twitter: murillo
+  github: murillo128
+# - id: sammachin
+#   name: Sam Machin
+#   image: /assets/speakers/sammachin.jpg
+#   bio: Sam
+#   company: Vonage
+#   twitter: sam
+#   github: sam
+
