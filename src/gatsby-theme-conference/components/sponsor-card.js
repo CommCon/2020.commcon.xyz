@@ -46,17 +46,17 @@ export default ({
     </Styled.a>
     <Flex mx={-2}>
       {twitter && (
-        <IconLink href={twitter}>
+        <IconLink href={`https://twitter.com/${twitter}`}>
           <Twitter />
         </IconLink>
       )}
       {github && (
-        <IconLink href={github}>
+        <IconLink href={`https://github.com/${github}`}>
           <GitHub />
         </IconLink>
       )}
       {instagram && (
-        <IconLink href={instagram}>
+        <IconLink href={`https://instagram.com/${instagram}`}>
           <Instagram />
         </IconLink>
       )}
