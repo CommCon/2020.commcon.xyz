@@ -98,6 +98,19 @@ index 111dc21..a949321 100644
      <Flex mx={-2}>
        {twitter && (
          <IconLink href={twitter}>
+diff --git a/node_modules/gatsby-theme-conference/src/components/speakers.js b/node_modules/gatsby-theme-conference/src/components/speakers.js
+index 3c7f188..c15d8bd 100644
+--- a/node_modules/gatsby-theme-conference/src/components/speakers.js
++++ b/node_modules/gatsby-theme-conference/src/components/speakers.js
+@@ -19,7 +19,7 @@ export default ({
+       </SectionHeading>
+       <FlexList
+         sx={{
+-          justifyContent: 'center',
++          justifyContent: 'left',
+         }}>
+         {speakers.map(speaker => (
+           <SpeakerCard
 diff --git a/node_modules/gatsby-theme-conference/src/components/sponsors.js b/node_modules/gatsby-theme-conference/src/components/sponsors.js
 index 5ed854a..ceb99e0 100644
 --- a/node_modules/gatsby-theme-conference/src/components/sponsors.js
