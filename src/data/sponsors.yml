@@ -11,7 +11,7 @@
 - id: cyara
   name: Cyara
   url: https://cyara.com/
-  logo: /assets/sponsors/cyara.jpg
+  logo: /assets/sponsors/cyara.svg
   tier: Platinum
 - id: newvector
   name: New Vector
@@ -41,7 +41,7 @@
 - id: aplisay
   name: Aplisay
   url: https://www.teluu.com/
-  logo: /assets/sponsors/teluu.svg
+  logo: /assets/sponsors/aplisay.svg
   tier: Silver
 - id: qxip
   name: QXIP
