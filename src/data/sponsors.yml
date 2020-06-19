@@ -10,61 +10,61 @@
   url: https://www.voxbone.com/
   logo: /assets/sponsors/voxbone.svg
   tier: Platinum
-  twitter: ""
-  github: ""
+  twitter: voxbone
+  github: voxbone
 - id: cyara
   name: Cyara
   url: https://cyara.com/
   logo: /assets/sponsors/cyara.svg
   tier: Platinum
-  twitter: ""
-  github: ""
+  twitter: GetCyara
+  github: cyara
 - id: newvector
-  name: Matrix Foundation
-  url: https://vector.im/
+  name: The Matrix.org Foundation
+  url: https://matrix.org/
   logo: /assets/sponsors/matrix.svg
   tier: Gold
-  twitter: ""
-  github: ""
+  twitter: matrixdotorg
+  github: matrix-org
 - id: vonage
   name: Vonage
   url: https://developer.nexmo.com/
   logo: /assets/sponsors/vonage.svg
   tier: Gold
-  twitter: ""
-  github: ""
+  twitter: VonageDev
+  github: Vonage
 - id: sangoma
   name: Sangoma
   url: https://www.sangoma.com/open-source/
   logo: /assets/sponsors/sangoma.svg
   tier: Gold
-  twitter: ""
-  github: ""
+  twitter: sangoma
+  github: sangoma
 - id: ctel
   name: Telviva
   url: https://www.telviva.co.za/
   logo: /assets/sponsors/telviva.svg
   tier: Gold
-  twitter: ""
-  github: ""
+  twitter: TelvivaSA
+  github: Connection-Telecom
 - id: loway
   name: Loway
   url: https://www.loway.ch/
   logo: /assets/sponsors/loway.svg
   tier: Gold
-  twitter: ""
-  github: ""
+  twitter: queuemetrics
+  github: Loway
 - id: aplisay
   name: Aplisay
   url: https://www.aplisay.com/
   logo: /assets/sponsors/aplisay.svg
   tier: Silver
-  twitter: ""
-  github: ""
+  twitter: aplisay
+  github: aplisay
 - id: qxip
   name: QXIP
   url: https://www.teluu.com/
   logo: /assets/sponsors/qxip.svg
   tier: Community
-  twitter: ""
-  github: ""
+  twitter: qxip
+  github: qxip

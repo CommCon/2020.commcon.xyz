@@ -11,10 +11,14 @@
 
     Telecoms as an industry has historically been one of the most open ecosystems with interoperability being achievable.  We’re now in a position where this industry has been leapfrogged by huge strives in the Cloud marketplace, to completely revolutionize the interconnectivity of systems.
 - date: 2019-04-15 09:46
-  title: SFrame
+  title: "SFrame.js: End to end encryption for everyone"
   speaker: sergio
   description: |
-    SFrame
+    Due to recent events, e2ee has become a must have in any videoconferencing service, even if your service does not have privacy and security as it's main use case.
+
+    WebRTC has failed to provide a solution for e2ee in SFU scenarios until insertable streams has been implemented as an experimental feature in Chrome. From PERC to SFrame, we will be talking about what have been the different approaches to provide e2ee and posibles ways in which e2ee will evolve in the near future.
+
+    Last, we will be covering a 1000ft view of what you would need to do to add e2ee support to your service SFrame.js, the pure javascript implementation of SFrame based on webcrypto.
 - date: 2019-04-15 10:30
   title: Turning live events to virtual with Janus
   speaker: lorenzominiero

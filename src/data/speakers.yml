@@ -5,6 +5,7 @@
   company: New Vector
   twitter: ara4n
   github: ara4n
+  linkedin: matthew-hodgson-22535b2
 - id: tony
   name: Tony Gooch
   image: /assets/speakers/tonygooch.jpg
@@ -24,7 +25,8 @@
     give back – by helping Geeks to Speak!
   company: Let the Geek Speak
   twitter: dduffett
-  url: http://www.letthegeekspeak.com
+  url: https://letthegeekspeak.com/
+  linkedin: davidduffett
 - id: tim
   name: Tim Panton
   image: /assets/speakers/timpanton.jpg
@@ -40,6 +42,7 @@
   twitter: steely_glint
   github: steely-glint
   url: https://pi.pe
+  linkedin: timpanton
 - id: sean
   name: Sean DuBois
   image: /assets/speakers/seandubois.jpg
@@ -48,6 +51,7 @@
   twitter: _pion
   github: pion
   url: https://pion.ly/
+  linkedin: sean-dubois
 - id: chad
   name: Chad Hart
   image: /assets/speakers/chadhart.jpg
@@ -56,6 +60,7 @@
   twitter: chadwallacehart
   github: chadwallacehart
   url: https://cwh.consulting/
+  linkedin: chadwallacehart
 - id: fred
   name: Fred Posner
   image: /assets/speakers/fredposner.jpg
@@ -70,6 +75,7 @@
   twitter: fredposner
   github: fredposner
   url: https://lod.com
+  linkedin: qxork
 - id: lorenzomangani
   name: Lorenzo Mangani
   image: /assets/speakers/lorenzomangani.png
@@ -81,6 +87,7 @@
   twitter: qxip
   github: qxip
   url: http://qxip.net
+  linkedin: lmangani
 - id: davehorton
   name: Dave Horton
   image: /assets/speakers/davehorton.jpg
@@ -103,6 +110,7 @@
   company: Beachdog Networks
   twitter: davehorton
   github: jambonz
+  linkedin: dave-horton-422a882
 - id: max
   name: Max DH
   image: /assets/speakers/max.png
@@ -138,6 +146,7 @@
   company: Meetecho
   twitter: elminiero
   github: lminiero
+  linkedin: lorenzo-miniero-8738606
 # - id: emil
 #   name: Emil
 #   image: /assets/speakers/emil.jpg
@@ -159,6 +168,7 @@
   company: Cosmo
   twitter: murillo
   github: murillo128
+  linkedin: sergiogarciamurillo
 # - id: sammachin
 #   name: Sam Machin
 #   image: /assets/speakers/sammachin.jpg
@@ -166,4 +176,12 @@
 #   company: Vonage
 #   twitter: sam
 #   github: sam
+- id: alexandr
+  name: Alexandr Dubovikov
+  image: /assets/speakers/alexandr.jpg
+  bio: He is employed as Senior Voice Engineer for QSC AG, one of the major German voice and data providers. Alexandr holds a diploma in physics of Odessa State University. He has 20 years of experience in telecommunication techniques and has contributed to many OpenSource projects like FeeeSwitch, SER, Kamailio, SEMS, Asterisk, SIPP, Wireshark. Alexandr is the founder and main developer of Homer SIP Capture project.
+  company: Plusnet
+  twitter: adubovikov
+  github: adubovikov
+  linkedin: alexandrdubovikov
 

@@ -219,19 +219,21 @@ index 5ed854a..ae9d6c4 100644
 +  )
 +          }
 diff --git a/node_modules/gatsby-theme-conference/src/components/venue.js b/node_modules/gatsby-theme-conference/src/components/venue.js
-index 69d899e..1d775f5 100644
+index 69d899e..447fb56 100644
 --- a/node_modules/gatsby-theme-conference/src/components/venue.js
 +++ b/node_modules/gatsby-theme-conference/src/components/venue.js
-@@ -1,6 +1,8 @@
+@@ -1,6 +1,10 @@
  /** @jsx jsx */
  import { jsx, Styled, Flex, Container } from 'theme-ui'
  import SectionHeading from './section-heading'
-+import paragraphs from 'lines-to-paragraphs'
-+
++//import paragraphs from 'lines-to-paragraphs'
++import {
++  Youtube,
++} from 'react-feather'
  
  export default ({
    title,
-@@ -49,15 +51,19 @@ export default ({
+@@ -49,16 +53,20 @@ export default ({
              }}>
              {address}
            </Styled.p>
@@ -254,11 +256,13 @@ index 69d899e..1d775f5 100644
            <div>
 -            <Styled.a href={mapURL}>View Map</Styled.a>
 -            {' | '}
+-            <Styled.a href={url}>Website</Styled.a>
 +            {/* <Styled.a href={mapURL}>View Map</Styled.a>
 +            {' | '} */}
-             <Styled.a href={url}>Website</Styled.a>
++            <Youtube /> <Styled.a href={url}>Subscribe</Styled.a>
            </div>
          </div>
+       </Flex>
 diff --git a/node_modules/gatsby-theme-conference/src/layouts/schedule.js b/node_modules/gatsby-theme-conference/src/layouts/schedule.js
 index bce310c..1da9221 100644
 --- a/node_modules/gatsby-theme-conference/src/layouts/schedule.js
@@ -281,7 +285,7 @@ index bce310c..1da9221 100644
                {days[date].map(item => (
                  <li key={item.time}>
 diff --git a/node_modules/gatsby-theme-conference/src/pages/index.js b/node_modules/gatsby-theme-conference/src/pages/index.js
-index 91b3290..f3f4e1f 100644
+index 91b3290..6040ca2 100644
 --- a/node_modules/gatsby-theme-conference/src/pages/index.js
 +++ b/node_modules/gatsby-theme-conference/src/pages/index.js
 @@ -34,6 +34,8 @@ export const pageQuery = graphql`
@@ -302,7 +306,18 @@ index 91b3290..f3f4e1f 100644
          }
        }
      }
-@@ -79,9 +83,7 @@ export const pageQuery = graphql`
+@@ -71,7 +75,9 @@ export const pageQuery = graphql`
+           image
+           company
+           twitter
+-          github
++          github,
++          url,
++          linkedin
+         }
+       }
+     }
+@@ -79,9 +85,7 @@ export const pageQuery = graphql`
        venue {
          title
          address

@@ -3,7 +3,8 @@ import { Styled, jsx, Flex } from 'theme-ui'
 import {
   Twitter,
   GitHub,
-  Instagram
+  Instagram,
+  ExternalLink
 } from 'react-feather'
 
 import {
@@ -33,17 +34,9 @@ export default ({
         backgroundRepeat: 'no-repeat'
       }}
     />
-    <Styled.a
-      href={url}
-      title={name}
-      sx={{
-        textDecoration: 'none',
-        color: '#000' //bodge
-      }}>
-      <Styled.h3>
-        {name}
-      </Styled.h3>
-    </Styled.a>
+    <Styled.h3>
+      {name}
+    </Styled.h3>
     <Flex mx={-2}>
       {twitter && (
         <IconLink href={`https://twitter.com/${twitter}`}>
@@ -58,6 +51,11 @@ export default ({
       {instagram && (
         <IconLink href={`https://instagram.com/${instagram}`}>
           <Instagram />
+        </IconLink>
+      )}
+      {url && (
+        <IconLink href={url}>
+          <ExternalLink />
         </IconLink>
       )}
     </Flex>
