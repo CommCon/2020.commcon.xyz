@@ -27,3 +27,9 @@
   from = "https://www.commcon.xyz/*"
   to = "https://2020.commcon.xyz/:splat"
   status = 301
+
+[[headers]]
+  # Define which paths this specific [[headers]] block will cover.
+  for = "/.well-known/matrix/client"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"
