@@ -1,3 +1,77 @@
+diff --git a/node_modules/gatsby-theme-conference/src/components/matrix.js b/node_modules/gatsby-theme-conference/src/components/matrix.js
+new file mode 100644
+index 0000000..9e46c43
+--- /dev/null
++++ b/node_modules/gatsby-theme-conference/src/components/matrix.js
+@@ -0,0 +1,68 @@
++/** @jsx jsx */
++import { jsx, Styled, Flex, Container } from 'theme-ui'
++
++import SectionHeading from './section-heading'
++
++export default () =>
++  <div
++    id='matrix'
++    sx={{ py: 5 }}>
++    <Container>
++      <SectionHeading>
++        Virtual Community
++      </SectionHeading>
++      <Flex
++        sx={{
++          mx: -3,
++          alignItems: 'center',
++          flexWrap: 'wrap',
++        }}>
++        <div
++          sx={{
++            flex: 'none',
++            p: 3,
++            width: [ '100%', '50%' ],
++          }}>
++          <Styled.img
++            src='/assets/sponsors/matrix.svg'
++            sx={{
++              width: '100%',
++            }}
++          />
++        </div>
++        <div
++          sx={{
++            flex: 'none',
++            p: 3,
++            width: [ '100%', '50%' ],
++          }}>
++          <Styled.h3>Matrix</Styled.h3>
++          <Styled.p
++            sx={{
++              mb: 2
++            }}>
++            Q&amp;A, "the hallway track", sponsor chit-chat and general conversation will happen on Matrix, an open source decentralised messaging platform.
++          </Styled.p>
++          <Styled.p
++            sx={{
++              mb: 2
++            }}>
++          Join #general:commcon.xyz from any other federated Matrix server, or just sign up for a temporary CommCon Matrix account.
++          </Styled.p>
++          <Styled.p
++              sx={{
++              my: 0
++              }}
++              // dangerouslySetInnerHTML={{ __html: paragraphs(description) }}
++          >
++              Sponsored by <Styled.a href='https://modular.im'>modular.im</Styled.a> and The Matrix Foundation
++          </Styled.p>
++          <div>
++            {/* <Styled.a href={mapURL}>View Map</Styled.a>
++            {' | '} */}
++            <Styled.a href="https://riot.commcon.xyz">Join the community</Styled.a>
++          </div>
++        </div>
++      </Flex>
++    </Container>
++  </div>
 diff --git a/node_modules/gatsby-theme-conference/src/components/mcs.js b/node_modules/gatsby-theme-conference/src/components/mcs.js
 index afd28f8..d791b43 100644
 --- a/node_modules/gatsby-theme-conference/src/components/mcs.js
@@ -263,6 +337,26 @@ index 69d899e..447fb56 100644
            </div>
          </div>
        </Flex>
+diff --git a/node_modules/gatsby-theme-conference/src/layouts/index.js b/node_modules/gatsby-theme-conference/src/layouts/index.js
+index 66015ba..f65f8e2 100644
+--- a/node_modules/gatsby-theme-conference/src/layouts/index.js
++++ b/node_modules/gatsby-theme-conference/src/layouts/index.js
+@@ -7,6 +7,7 @@ import Venue from '../components/venue'
+ import MCs from '../components/mcs'
+ import Schedule from '../components/schedule'
+ import CTA from '../components/cta'
++import Matrix from '../components/matrix'
+ 
+ export default ({
+   speakers,
+@@ -19,6 +20,7 @@ export default ({
+     <Banner />
+     <Speakers speakers={speakers} />
+     <Venue {...venue} />
++    <Matrix />
+     <Schedule schedule={schedule} />
+     <MCs mcs={mcs} />
+     <Sponsors sponsors={sponsors} />
 diff --git a/node_modules/gatsby-theme-conference/src/layouts/schedule.js b/node_modules/gatsby-theme-conference/src/layouts/schedule.js
 index bce310c..1da9221 100644
 --- a/node_modules/gatsby-theme-conference/src/layouts/schedule.js
