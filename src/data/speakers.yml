@@ -1,3 +1,17 @@
+- id: natalieadams
+  name: Natalie Adams
+  image: /assets/speakers/natalieadams.jpg
+  bio: Natalie has worked in a variety of industries including retail, travel and now the NHS supporting systems, organisations, leaders and teams to thrive and develop. She's also an Executive Coach, Mental Health and Psychological First Aider. In my current role I’m supporting the NHS Covid 19 recovery plan with a focus on psychological wellbeing and resilience now we have moved out of the 1st active stage of the pandemic in the UK.
+  company: Kent and Medway NHS and Social Care Partnership Trust
+  linkedin: natalie-adams-26b40156
+- id: sammachin
+  name: Sam Machin
+  image: /assets/speakers/sammachin.jpg
+  bio: Sam has worked in the communications industry for over 20 years, IN that time he’s worked with numerous comms APIs, some more successful than others, and is now a Senior Product Manager at Vonage working on integrations. His current area of interest is in low-code tools and visual environments, the ability to open up building to a wider group of people who would be scared off by traditional coding interfaces.
+  company: Vonage
+  linkedin: sammachin
+  github: sammachin
+  twitter: sammachin
 - id: matthew
   name: Matthew Hodgson
   image: /assets/speakers/matthewhodgson.jpg
