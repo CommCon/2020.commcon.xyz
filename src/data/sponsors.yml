@@ -68,10 +68,22 @@
   tier: Silver
   twitter: _pion
   github: pion
+- id: telcobridges
+  name: TelcoBridges
+  url: https://www.telcobridges.com/
+  logo: /assets/sponsors/telcobridges.svg
+  tier: Silver
+  twitter: telcobridges
 - id: qxip
   name: QXIP
-  url: https://www.teluu.com/
+  url: https://qxip.net/
   logo: /assets/sponsors/qxip.svg
   tier: Community
   twitter: qxip
   github: qxip
+- id: cycore
+  name: CyCore Systems, Inc
+  url: https://www.cycoresys.com/
+  logo: /assets/sponsors/cycore.svg
+  tier: Community
+  github: CyCoreSystems
