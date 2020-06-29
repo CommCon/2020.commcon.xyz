@@ -106,3 +106,8 @@
     Configuring and managing asterisk has always been a tricky task to understand and in many ways the config files are a form of 'code' Over the years several web based tools have emerged to make managing a PBX simpler. However these tools are usually built around a fairly specific use case. There are also new ways of managing your asterisk box through code in languages like javascript mostly using the ARI interface.
     I've started to experiment with what it would look like to manage asterisk via ARI inside NodeRED, trying to get the same level of power and flexibility from code based config with the ease of use from a visual tool.
     This talk is mostly going to be me asking a bunch of questions and showing the limited progress so far, so I would encourage people to join the discussion after the talk.
+- date: 2019-04-16 10:41
+  title:   Impact of media quality during shelter in place.
+  speaker: varun
+  description: |
+    TBC
