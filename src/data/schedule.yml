@@ -93,10 +93,10 @@
     or "selling point" but ideology and the process. We will share few things and
     interesting techniques that we have discovered while implementing this vision.
 - date: 2019-04-16 10:39
-  title: RTC and COVID-19 - the true story
+  title: The pandemic, Zoom, and What’s next for RTC
   speaker: chad
   description: |
-    TBC
+  The pandemic has increased the reliance on real time communications, but is this newfound usage evenly distributed? What industries, segments, and companies are leading the pack and what can we learn from them? Zoom in particular has become a household name, despite many high-profile issues. Can you replicate some of their success?  What’s next for the RTC industry after the pandemic? I will attempt to answer these questions and more with a data-driven approach.
 - date: 2019-04-16 10:40
   title: Using NodeRED as a Visual Asterisk Manager
   speaker: sammachin

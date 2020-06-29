@@ -61,6 +61,13 @@
   tier: Silver
   twitter: aplisay
   github: aplisay
+- id: pion
+  name: Pion
+  url: https://pion.ly/
+  logo: /assets/sponsors/pion.svg
+  tier: Silver
+  twitter: _pion
+  github: pion
 - id: qxip
   name: QXIP
   url: https://www.teluu.com/
