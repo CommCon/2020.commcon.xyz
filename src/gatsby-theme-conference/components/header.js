@@ -33,11 +33,12 @@ export default props =>
     <DesktopOnly>
       <NavLink as={Link} to='/#speakers'>Speakers</NavLink>
       <NavLink as={Link} to='/#schedule'>Schedule</NavLink>
-      <NavLink as={Link} to='/#venue'>Venue</NavLink>
+      <NavLink as={Link} to='/#venue'>YouTube</NavLink>
+      <NavLink as={Link} to='/#matrix'>Community</NavLink>
       <NavLink as={Link} to='/#sponsors'>Sponsors</NavLink>
     </DesktopOnly>
     <div sx={{ mx: 'auto' }} />
-    <Button href='#purchase'>
+    <Button href='#venue'>
       Attend
     </Button>
   </Fragment>

@@ -96,7 +96,7 @@
   title: The pandemic, Zoom, and What’s next for RTC
   speaker: chad
   description: |
-  The pandemic has increased the reliance on real time communications, but is this newfound usage evenly distributed? What industries, segments, and companies are leading the pack and what can we learn from them? Zoom in particular has become a household name, despite many high-profile issues. Can you replicate some of their success?  What’s next for the RTC industry after the pandemic? I will attempt to answer these questions and more with a data-driven approach.
+    The pandemic has increased the reliance on real time communications, but is this newfound usage evenly distributed? What industries, segments, and companies are leading the pack and what can we learn from them? Zoom in particular has become a household name, despite many high-profile issues. Can you replicate some of their success?  What’s next for the RTC industry after the pandemic? I will attempt to answer these questions and more with a data-driven approach.
 - date: 2019-04-16 10:40
   title: Using NodeRED as a Visual Asterisk Manager
   speaker: sammachin

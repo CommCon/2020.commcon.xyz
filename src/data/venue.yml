@@ -2,6 +2,7 @@ venue:
   title: YouTube Premiere
   url: https://www.youtube.com/commcon?sub_confirmation=1
   address: ""
-  description: ""
+  description: |
+    CommCon Virtual 2020 is entirely free of charge to attend thanks to our Sponsors. Subscribe (and press on the bell) to be alerted to all our sessions. You can also sign up to our Riot instance to take part in conversations with speakers, sponsors and other attendees.
   image: /assets/youtube.jpg
   mapURL: foo
