@@ -379,7 +379,7 @@ index bce310c..1da9221 100644
                {days[date].map(item => (
                  <li key={item.time}>
 diff --git a/node_modules/gatsby-theme-conference/src/pages/index.js b/node_modules/gatsby-theme-conference/src/pages/index.js
-index 91b3290..6040ca2 100644
+index 91b3290..1b06909 100644
 --- a/node_modules/gatsby-theme-conference/src/pages/index.js
 +++ b/node_modules/gatsby-theme-conference/src/pages/index.js
 @@ -34,6 +34,8 @@ export const pageQuery = graphql`
@@ -411,7 +411,7 @@ index 91b3290..6040ca2 100644
          }
        }
      }
-@@ -79,9 +85,7 @@ export const pageQuery = graphql`
+@@ -79,10 +85,9 @@ export const pageQuery = graphql`
        venue {
          title
          address
@@ -419,8 +419,10 @@ index 91b3290..6040ca2 100644
          url
 -        mapURL
          image
++        description
        }
      }
+   }
 diff --git a/node_modules/gatsby-theme-conference/src/use-site-metadata.js b/node_modules/gatsby-theme-conference/src/use-site-metadata.js
 index cca40bf..810ed69 100644
 --- a/node_modules/gatsby-theme-conference/src/use-site-metadata.js
