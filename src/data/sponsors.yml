@@ -74,6 +74,12 @@
   logo: /assets/sponsors/telcobridges.svg
   tier: Silver
   twitter: telcobridges
+- id: avoxi
+  name: AVOXI
+  url: https://www.telcobridges.com/
+  logo: /assets/sponsors/avoxi.svg
+  tier: Silver
+  twitter: avoxi
 - id: qxip
   name: QXIP
   url: https://qxip.net/
