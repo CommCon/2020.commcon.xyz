@@ -110,4 +110,4 @@
   title:   Impact of media quality during shelter in place.
   speaker: varun
   description: |
-    TBC
+    During this year, millions of people around the world have been experiencing an unprecedented change in their daily routines due to the global pandemic caused by the novel COVID-19 virus. Like many countries, local governments across North America responded to the pandemic by enacting shelter-in-place (ShIP) and encouraging social distancing to reduce the community spread of the virus. In this period we’ve become more reliant on many forms of electronic communications, such as audio and video conferencing which have been made widely available by accessible apps. At http://callstats.io, millions of calls have been analyzed from over 1000 WebRTC apps to help paint a picture of some of the changes to the usage and call quality in the United States over a 4-month period.
