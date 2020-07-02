@@ -164,20 +164,22 @@
   twitter: elminiero
   github: lminiero
   linkedin: lorenzo-miniero-8738606
-# - id: emil
-#   name: Emil
-#   image: /assets/speakers/emil.jpg
-#   bio: Emil
-#   company: 8x8
-#   twitter: emil
-#   github: emil
-# - id: saghul
-#   name: Saghul
-#   image: /assets/speakers/saghul.jpg
-#   bio: Saghul
-#   company: 8x8
-#   twitter: emil
-#   github: emil
+- id: emil
+  name: Emil
+  image: /assets/speakers/emil.jpg
+  bio: Emil
+  company: 8x8
+  twitter: emil
+  github: emil
+  dontshow: true
+- id: saghul
+  name: Saghul
+  image: /assets/speakers/saghul.jpg
+  bio: Saghul
+  company: 8x8
+  twitter: emil
+  github: emil
+  dontshow: true
 - id: sergio
   name: Sergio Garcia Murillo
   image: /assets/speakers/sergio.jpeg
@@ -202,4 +204,41 @@
   twitter: vr000m
   github: vr000m
   linkedin: vr000m
+- id: holly
+  name: Holly
+  image: /assets/speakers/varun.jpg_large
+  bio: Varun is the founder of https://callstats.io, he runs media quality and connectivity at 8x8. He has a PhD in multimedia networks and coauthor of several standards.
+  company: 8x8
+  twitter: vr000m
+  github: vr000m
+  linkedin: vr000m
+  dontshow: true
+- id: geoff
+  name: Geoff
+  image: /assets/speakers/varun.jpg_large
+  bio: Varun is the founder of https://callstats.io, he runs media quality and connectivity at 8x8. He has a PhD in multimedia networks and coauthor of several standards.
+  company: 8x8
+  twitter: vr000m
+  github: vr000m
+  linkedin: vr000m
+  dontshow: true
+- id: perry
+  name: Perry
+  image: /assets/speakers/varun.jpg_large
+  bio: Varun is the founder of https://callstats.io, he runs media quality and connectivity at 8x8. He has a PhD in multimedia networks and coauthor of several standards.
+  company: 8x8
+  twitter: vr000m
+  github: vr000m
+  linkedin: vr000m
+  dontshow: true
+- id: danjenkins
+  name: Dan Jenkins
+  image: /assets/danjenkins.jpg
+  bio: Dan Jenkins founded Nimble Ape in 2013 and has curated CommCon in the UK for the past two.
+  company: Nimble Ape
+  twitter: dan_jenkins
+  github: danjenkins
+  linkedin: jenkinsdaniel
+  url: https://nimblea.pe
+  dontshow: true
 

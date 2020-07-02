@@ -1,5 +1,7 @@
 /** @jsx jsx */
 import { jsx, Styled, Flex } from 'theme-ui'
+import moment  from 'moment-timezone'
+
 import {
   Youtube
 } from 'react-feather'
@@ -10,18 +12,23 @@ import {
 
 export default ({
   date,
+  datetime,
   time,
   speaker,
   title,
   description,
   youtube
-}) =>
-  <Flex
+}) => {
+
+  let pacificDiff = moment(datetime).tz('America/Los_Angeles').format('D') - moment(datetime).format('D')
+  let australiaDiff = moment(datetime).tz('Australia/Melbourne').format('D') - moment(datetime).format('D')
+
+  return (<Flex
     sx={{
       flexWrap: [ 'wrap', 'nowrap' ],
       alignItems: 'baseline',
     }}>
-    {/* <div
+    <div
       sx={{
         flex: 'none',
         width: [ '50%', 128 ],
@@ -30,9 +37,16 @@ export default ({
         sx={{
           fontSize: 3,
         }}>
-        {time}
+        {moment(datetime).tz('Australia/Melbourne').format('HH:mm')} AEST {australiaDiff != 0 && (
+          `${Math.sign(australiaDiff) ? '+' : '-'} ${australiaDiff} day`
+        )}<br />
+        {moment(datetime).tz('Europe/London').format('HH:mm')} BST <br />
+        {moment(datetime).tz('America/New_York').format('HH:mm')} EST <br />
+        {moment(datetime).tz('America/Los_Angeles').format('HH:mm')} PST {pacificDiff != 0 && (
+          `${pacificDiff} day`
+        )}
       </Styled.h3>
-    </div> */}
+    </div>
     <div
       sx={{
         flex: 'none',
@@ -44,7 +58,11 @@ export default ({
         }}>
         {title}
       </Styled.h4>
-      {speaker && speaker.name}
+      {speaker && (
+        speaker.map((items) => (
+          <Styled.p>{items.name}</Styled.p>
+        ))
+      )}
     </div>
     <div sx={{ width: '100%' }}>
       <Styled.p>
@@ -60,4 +78,5 @@ export default ({
         </IconLink>
       )}
     </Flex>
-  </Flex>
+  </Flex>)
+}
