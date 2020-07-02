@@ -60,7 +60,10 @@
 - id: sean
   name: Sean DuBois
   image: /assets/speakers/seandubois.jpg
-  bio: Pion Mantainer
+  bio: |
+    Sean maintains Pion and enjoys working on a few other Open Source RTP projects. He started his career he had was his time at the Recurse Center, where he learned C and Scheme.
+    He learned basics of Open Source thanks to the PHP community. During the PHP 5 -> 7 migration he added Class Constants to the language and migrated multiple extensions. The thing that makes him most passionate about Open Source is the oppurtunies it can afford anyone if they put the effort in.
+    You can build things that enrich the lives of people and working with fantastic people. He lives in Seattle with his wife.
   company: Pion
   twitter: _pion
   github: pion
