@@ -31,7 +31,7 @@ export default ({
     <div
       sx={{
         flex: 'none',
-        width: [ '50%', 128 ],
+        width: [ '50%', 207 ],
       }}>
       <Styled.h3
         sx={{
@@ -51,7 +51,8 @@ export default ({
     <div
       sx={{
         flex: 'none',
-        width: [ '50%', 192 ],
+        width: [ '50%', 307 ],
+        paddingRight: 10
       }}>
       <Styled.h4
         sx={{
