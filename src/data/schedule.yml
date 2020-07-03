@@ -6,6 +6,7 @@
     live events (e.g., IETF meetings) via WebRTC, facilitating remote participation.
     Then the world changed, and so must we. This talk will describe some of the strategies
     we followed to host completely virtual events using Janus.
+  slug: turning-live-events-to-virtual-with-janus
 - date: 2020-07-13 10:00
   title: Teluu
   speaker:
@@ -13,12 +14,14 @@
     - danjenkins
   description: |
     Perry and Dan get together and chat about Teluu, PJSIP and their commitment to Open Source.
+  slug: teluu-interview
 - date: 2020-07-13 14:00
   title: The pandemic, Zoom, and What’s next for RTC
   speaker:
     - chad
   description: |
     The pandemic has increased the reliance on real time communications, but is this newfound usage evenly distributed? What industries, segments, and companies are leading the pack and what can we learn from them? Zoom in particular has become a household name, despite many high-profile issues. Can you replicate some of their success?  What’s next for the RTC industry after the pandemic? I will attempt to answer these questions and more with a data-driven approach.
+  slug: the-pandemic-zoom-and-whats-next-for-rtc
 - date: 2020-07-13 18:00
   title: "Pion: Solving Production RTC problems with composable Go libraries"
   speaker:
@@ -28,15 +31,17 @@
     Clients). Instead lets talk about the unique production problems. Come learn why
     Pion is the software for large scale broadcasting, self driving cars and robots.  This
     is what developers do when real world constraints hit.
+  slug: pion-solving-production-rtc-problems-with-composable-go-libraries
 - date: 2020-07-14 06:00
   title: HOMER for webRTC
   speaker:
     - lorenzomangani
-    - Alexandr
+    - alexandr
   description: |
     HOMER is there for you, be it VoIP or RTC or your own protocols. Learn
     how to install and leverage release 7.7 for your stack in minutes and how to integrate
     its data  with your services.
+  slug: homer-for-webrtc
 - date: 2020-07-14 10:00
   title: Jitsi
   speaker:
@@ -44,6 +49,7 @@
     - saghul
   description: |
     Jitsi
+  slug: jitsi
 - date: 2020-07-14 14:00
   title: Cyara
   speaker:
@@ -51,15 +57,18 @@
     - danjenkins
   description: |
     Geoff and Dan get together and chat about Cyara and what they've been up to among other things.
+  slug: cyara-interview
 - date: 2020-07-14 18:00
   title: Building a Bigger Badder B2BUA
   speaker:
     - phillip
+    - andriy
   description: |
     We have rewritten our B2BUA component into GoLang and the net results
     have yielded some impressive results.  This talk will cover what tasks B2BUA handles
     and how Golang allows for these new efficiencies and the quantified results from
     our initial testing of the new component.
+  slug: building-a-bigger-badder-b2bua
 - date: 2020-07-15 06:00
   title: "SFrame.js: End to end encryption for everyone"
   speaker:
@@ -70,15 +79,8 @@
     WebRTC has failed to provide a solution for e2ee in SFU scenarios until insertable streams has been implemented as an experimental feature in Chrome. From PERC to SFrame, we will be talking about what have been the different approaches to provide e2ee and posibles ways in which e2ee will evolve in the near future.
 
     Last, we will be covering a 1000ft view of what you would need to do to add e2ee support to your service SFrame.js, the pure javascript implementation of SFrame based on webcrypto.
+  slug: sframejs-end-to-end-encryption-for-everyone
 - date: 2020-07-15 10:00
-  title: Voxbone
-  speaker:
-    - holly
-    - tony
-    - danjenkins
-  description: |
-    Holly, Tony and Dan get together and chat about Voxbone and what they've been up to among other things.
-- date: 2020-07-15 14:00
   title: "Dialing back Telecoms: How to drive our industry back towards an open ecosystem."
   speaker:
     - tony
@@ -86,6 +88,15 @@
     Communication as a core principle is being able to get ideas out there. However, there is a risk that if we’re not aware of some of the trends being taken up, we’ll end up finding ourselves back to a walled garden.
 
     Telecoms as an industry has historically been one of the most open ecosystems with interoperability being achievable.  We’re now in a position where this industry has been leapfrogged by huge strives in the Cloud marketplace, to completely revolutionize the interconnectivity of systems.
+  slug: dialing-back-telecoms-how-to-drive-our-industry-back-towards-an-open-ecosystem
+- date: 2020-07-15 14:00
+  title: Voxbone
+  speaker:
+    - tony
+    - danjenkins
+  description: |
+    Tony and Dan get together and chat about Voxbone and what they've been up to among other things.
+  slug: voxbone-interview
 - date: 2020-07-15 18:00
   title: Let the Geek Speak... via Video!
   speaker:
@@ -93,12 +104,14 @@
   description: |
     Making presentations via video meeting and webinar tools has become very popular indeed!  Many presenters make cringe-inducing mistakes and therefore lose any power that might have been in their message.
     This session shows where people go wrong - it all starts way before the presentation itself...
+  slug: let-the-geek-speak-via-video
 - date: 2020-07-16 06:00
-  title:   Impact of media quality during shelter in place.
+  title: Impact of media quality during shelter in place.
   speaker:
     - varun
   description: |
     During this year, millions of people around the world have been experiencing an unprecedented change in their daily routines due to the global pandemic caused by the novel COVID-19 virus. Like many countries, local governments across North America responded to the pandemic by enacting shelter-in-place (ShIP) and encouraging social distancing to reduce the community spread of the virus. In this period we’ve become more reliant on many forms of electronic communications, such as audio and video conferencing which have been made widely available by accessible apps. At http://callstats.io, millions of calls have been analyzed from over 1000 WebRTC apps to help paint a picture of some of the changes to the usage and call quality in the United States over a 4-month period.
+  slug: impact-of-media-quality-during-shelter-in-place
 - date: 2020-07-16 10:00
   title: "Recovery, Restoration and Resilence-managing your mental health though COVID-19 and beyond"
   speaker:
@@ -106,12 +119,14 @@
   description: |
     Mental wellbeing at work has been a big topic of the last few years but now with Covid 19 we are all facing huge changes to the way we work and communicate with others as well as the stress of living through a major pandemic.
     In this talk we will hear some of the ways the NHS have been using past crisis like the Ebola outbreak, war in Afghanistan and the Manchester Terrorist Bombings to consider the types of mental health support needed both for the general population and those working through the crisis. Natalie will share some practical advice around dealing with isolation, video call fatigue and the very normal but strong effect the pandemic is having on our psychological health and how we can all recover, restore and build our resilience.
+  slug: recovery-restoration-and-resilence-managing-your-mental-health-though-covid-19-and-beyond
 - date: 2020-07-16 14:00
   title: "P2P Matrix: Where we're going we don't need servers!"
   speaker:
     - matthew
   description: |
     Matrix is an open protocol for decentralised communication, and since the start of 2020 the team has been seriously experimenting with evolving Matrix to work in peer-to-peer environments, giving users full control of their communications without any dependencies on the internet or service providers. In this talk we'll show off the latest implementations, and discuss how Matrix may become a hybrid federated/p2p network in future
+  slug: p2p-matrix-where-were-going-we-dont-need-servers
 - date: 2020-07-16 18:00
   title: Kamailio for RTC Stability, Scaling, and Security
   speaker:
@@ -120,6 +135,7 @@
     Kamailio, the Open Source SIP Server, enables communication across SIP
     and WebRTC allowing you to build whatever your heart desires. Kamailio creates
     a solid foundation allowing you to build and grow as needed.
+  slug: kamailio-for-rtc-stability-scaling-and-security
 - date: 2020-07-17 06:00
   title: Using NodeRED as a Visual Asterisk Manager
   speaker:
@@ -129,6 +145,7 @@
     Configuring and managing asterisk has always been a tricky task to understand and in many ways the config files are a form of 'code' Over the years several web based tools have emerged to make managing a PBX simpler. However these tools are usually built around a fairly specific use case. There are also new ways of managing your asterisk box through code in languages like javascript mostly using the ARI interface.
     I've started to experiment with what it would look like to manage asterisk via ARI inside NodeRED, trying to get the same level of power and flexibility from code based config with the ease of use from a visual tool.
     This talk is mostly going to be me asking a bunch of questions and showing the limited progress so far, so I would encourage people to join the discussion after the talk.
+  slug: using-nodered-as-a-visual-asterisk-manager
 - date: 2020-07-17 10:00
   title: How to test a webRTC service on your own....
   speaker:
@@ -139,6 +156,7 @@
 
     I'll show how you can (ab)use serverless cloud technology to simulate
     many users of your service, at a surprisingly low cost.
+  slug: how-to-test-a-webrtc-service-on-your-own
 - date: 2020-07-17 14:00
   title: "jambonz: the \"little\" open source CPaaS"
   speaker:
@@ -148,6 +166,7 @@
     infrastructure.  It is targeted at CSPs and privacy-conscious enterprises.  It
     is modest in goals, small in size, simple to deploy, and easy to get your arms
     around.  This talk will describe why it's needed and give a demo.
+  slug: jambonz-the-little-open-source-cpaas
 - date: 2020-07-17 18:00
   title: "Carrier-Grade: what does it mean to us, practically speaking?"
   speaker:
@@ -156,3 +175,4 @@
     Our belief is that software reliability is not just an "another feature"
     or "selling point" but ideology and the process. We will share few things and
     interesting techniques that we have discovered while implementing this vision.
+  slug: carrier-grade-what-does-it-mean-to-us-practically-speaking

@@ -1,3 +1,50 @@
+diff --git a/node_modules/gatsby-theme-conference/gatsby-node.js b/node_modules/gatsby-theme-conference/gatsby-node.js
+index b278f4f..dc64d5f 100644
+--- a/node_modules/gatsby-theme-conference/gatsby-node.js
++++ b/node_modules/gatsby-theme-conference/gatsby-node.js
+@@ -22,3 +22,42 @@ exports.onPreBootstrap = ({ store }) => {
+     fs.copySync(src, dest)
+   }
+ }
++
++exports.createPages = async function ({ actions, graphql }) {
++  const { data } = await graphql(`
++    query {
++      allScheduleYaml {
++        edges {
++          node {
++            slug
++          }
++        }
++      }
++      allSpeakersYaml {
++        edges {
++          node {
++            id
++          }
++        }
++      }
++    }
++  `)
++
++  data.allSpeakersYaml.edges.forEach(edge => {
++    const id = edge.node.id
++    actions.createPage({
++      path: `/speaker/${id}`,
++      component: require.resolve(`./src/templates/speaker.js`),
++      context: { id: id },
++    })
++  })
++
++  data.allScheduleYaml.edges.forEach(edge => {
++    const slug = edge.node.slug
++    actions.createPage({
++      path: `/session/${slug}`,
++      component: require.resolve(`./src/templates/session.js`),
++      context: { slug: slug },
++    })
++  })
++}
 diff --git a/node_modules/gatsby-theme-conference/src/components/matrix.js b/node_modules/gatsby-theme-conference/src/components/matrix.js
 new file mode 100644
 index 0000000..9e46c43
@@ -367,6 +414,37 @@ index 66015ba..f65f8e2 100644
      <Schedule schedule={schedule} />
      <MCs mcs={mcs} />
      <Sponsors sponsors={sponsors} />
+diff --git a/node_modules/gatsby-theme-conference/src/layouts/live.js b/node_modules/gatsby-theme-conference/src/layouts/live.js
+new file mode 100644
+index 0000000..8bbe240
+--- /dev/null
++++ b/node_modules/gatsby-theme-conference/src/layouts/live.js
+@@ -0,0 +1,25 @@
++/** @jsx jsx */
++import { Styled, jsx, Container } from 'theme-ui'
++import orderBy from 'lodash.orderby'
++import Layout from '../components/layout'
++
++export default ({
++  data,
++}) => {
++  const schedule = data.allScheduleYaml.edges.map(edge => edge.node)
++  // let ordered = orderBy(schedule, 'datetime')
++
++  return (
++    <Layout>
++      <Container>
++        <Styled.h1
++          sx={{
++            mb: 5,
++          }}>
++            Live
++        </Styled.h1>
++
++      </Container>
++    </Layout>
++  )
++}
 diff --git a/node_modules/gatsby-theme-conference/src/layouts/schedule.js b/node_modules/gatsby-theme-conference/src/layouts/schedule.js
 index bce310c..1da9221 100644
 --- a/node_modules/gatsby-theme-conference/src/layouts/schedule.js
@@ -389,19 +467,10 @@ index bce310c..1da9221 100644
                {days[date].map(item => (
                  <li key={item.time}>
 diff --git a/node_modules/gatsby-theme-conference/src/pages/index.js b/node_modules/gatsby-theme-conference/src/pages/index.js
-index 91b3290..a09317d 100644
+index 91b3290..e685e4c 100644
 --- a/node_modules/gatsby-theme-conference/src/pages/index.js
 +++ b/node_modules/gatsby-theme-conference/src/pages/index.js
-@@ -10,6 +10,8 @@ export default props => {
-   const mcs = data.allMcYaml.edges.map(edge => edge.node)
-   const { venue } = data.dataYaml
- 
-+  console.log(schedule);
-+
-   return (
-     <Landing
-       {...props}
-@@ -34,6 +36,9 @@ export const pageQuery = graphql`
+@@ -34,6 +34,9 @@ export const pageQuery = graphql`
            company
            twitter
            github
@@ -411,7 +480,7 @@ index 91b3290..a09317d 100644
          }
        }
      }
-@@ -45,12 +50,15 @@ export const pageQuery = graphql`
+@@ -45,12 +48,16 @@ export const pageQuery = graphql`
            url
            logo
            tier
@@ -423,10 +492,19 @@ index 91b3290..a09317d 100644
      allScheduleYaml {
        edges {
          node {
++          slug
 +          datetime:  date
            date(formatString: "ddd, MMM Do")
            time: date(formatString: "h:mm a")
            title
+@@ -58,6 +65,7 @@ export const pageQuery = graphql`
+           speaker {
+             name
+             company
++            id
+           }
+         }
+       }
 @@ -71,7 +79,9 @@ export const pageQuery = graphql`
            image
            company
@@ -450,34 +528,23 @@ index 91b3290..a09317d 100644
        }
      }
    }
-diff --git a/node_modules/gatsby-theme-conference/src/pages/schedule.js b/node_modules/gatsby-theme-conference/src/pages/schedule.js
-index 51b1e72..6ef0e62 100644
---- a/node_modules/gatsby-theme-conference/src/pages/schedule.js
-+++ b/node_modules/gatsby-theme-conference/src/pages/schedule.js
-@@ -8,6 +8,7 @@ export const pageQuery = graphql`
-     allScheduleYaml {
-       edges {
-         node {
-+          datetime:  date
-           date(formatString: "ddd, MMM Do")
-           time: date(formatString: "h:mm a")
-           title
-diff --git a/node_modules/gatsby-theme-conference/src/pages/session.js b/node_modules/gatsby-theme-conference/src/pages/session.js
+diff --git a/node_modules/gatsby-theme-conference/src/pages/live.js b/node_modules/gatsby-theme-conference/src/pages/live.js
 new file mode 100644
-index 0000000..6ef0e62
+index 0000000..4f0be4f
 --- /dev/null
-+++ b/node_modules/gatsby-theme-conference/src/pages/session.js
-@@ -0,0 +1,24 @@
++++ b/node_modules/gatsby-theme-conference/src/pages/live.js
+@@ -0,0 +1,26 @@
 +import { graphql } from 'gatsby'
-+import Schedule from '../layouts/schedule'
++import Live from '../layouts/live'
 +
-+export default Schedule
++export default Live
 +
 +export const pageQuery = graphql`
 +  query {
 +    allScheduleYaml {
 +      edges {
 +        node {
++          slug
 +          datetime:  date
 +          date(formatString: "ddd, MMM Do")
 +          time: date(formatString: "h:mm a")
@@ -486,40 +553,34 @@ index 0000000..6ef0e62
 +          speaker {
 +            name
 +            company
++            id
 +          }
 +        }
 +      }
 +    }
 +  }
 +`
-diff --git a/node_modules/gatsby-theme-conference/src/pages/speaker.js b/node_modules/gatsby-theme-conference/src/pages/speaker.js
-new file mode 100644
-index 0000000..94fbe9b
---- /dev/null
-+++ b/node_modules/gatsby-theme-conference/src/pages/speaker.js
-@@ -0,0 +1,22 @@
-+import { graphql } from 'gatsby'
-+import Speakers from '../layouts/speakers'
-+
-+export default Speakers
-+
-+export const pageQuery = graphql`
-+  query {
-+    allSpeakersYaml {
-+      edges {
-+        node {
-+          id
-+          name
-+          bio
-+          image
-+          company
-+          twitter
-+          github
-+        }
-+      }
-+    }
-+  }
-+`
+diff --git a/node_modules/gatsby-theme-conference/src/pages/schedule.js b/node_modules/gatsby-theme-conference/src/pages/schedule.js
+index 51b1e72..c12231f 100644
+--- a/node_modules/gatsby-theme-conference/src/pages/schedule.js
++++ b/node_modules/gatsby-theme-conference/src/pages/schedule.js
+@@ -8,6 +8,8 @@ export const pageQuery = graphql`
+     allScheduleYaml {
+       edges {
+         node {
++          slug
++          datetime:  date
+           date(formatString: "ddd, MMM Do")
+           time: date(formatString: "h:mm a")
+           title
+@@ -15,6 +17,7 @@ export const pageQuery = graphql`
+           speaker {
+             name
+             company
++            id
+           }
+         }
+       }
 diff --git a/node_modules/gatsby-theme-conference/src/pages/speakers.js b/node_modules/gatsby-theme-conference/src/pages/speakers.js
 index 94fbe9b..f1f6f3e 100644
 --- a/node_modules/gatsby-theme-conference/src/pages/speakers.js
@@ -532,6 +593,143 @@ index 94fbe9b..f1f6f3e 100644
          }
        }
      }
+diff --git a/node_modules/gatsby-theme-conference/src/templates/session.js b/node_modules/gatsby-theme-conference/src/templates/session.js
+new file mode 100644
+index 0000000..e365069
+--- /dev/null
++++ b/node_modules/gatsby-theme-conference/src/templates/session.js
+@@ -0,0 +1,56 @@
++import React from "react"
++import { graphql } from "gatsby"
++import Layout from "../components/layout"
++import { Styled, Container, Flex } from 'theme-ui'
++
++export default function SchedulePage({ data }) {
++  const schedule = data.scheduleYaml
++  return (
++    <Layout>
++      <Container>
++        <Styled.h1
++          sx={{
++            mb: 5,
++          }}>
++          {schedule.title}
++        </Styled.h1>
++        <Flex
++        sx={{
++          mx: -3,
++          alignItems: 'center',
++          flexWrap: 'wrap',
++        }}>
++        <div
++          sx={{
++            flex: 'none',
++            p: 3,
++            width: [ '100%', '100%' ],
++          }}>
++          <Styled.p
++            sx={{
++              mb: 2
++            }}>
++            {schedule.description}
++          </Styled.p>
++        </div>
++      </Flex>
++      </Container>
++    </Layout>
++  )
++}
++export const query = graphql`
++query($slug: String!) {
++  scheduleYaml(slug: { eq: $slug }) {
++    datetime:  date
++    date(formatString: "ddd, MMM Do")
++    time: date(formatString: "h:mm a")
++    title
++    description
++    speaker {
++      name
++      company
++      id
++    }
++  }
++}
++`
+\ No newline at end of file
+diff --git a/node_modules/gatsby-theme-conference/src/templates/speaker.js b/node_modules/gatsby-theme-conference/src/templates/speaker.js
+new file mode 100644
+index 0000000..bd50514
+--- /dev/null
++++ b/node_modules/gatsby-theme-conference/src/templates/speaker.js
+@@ -0,0 +1,67 @@
++import React from "react"
++import { graphql } from "gatsby"
++import Layout from "../components/layout"
++import { Styled, Container, Flex } from 'theme-ui'
++
++export default function SpeakerPage({ data }) {
++  const speaker = data.speakersYaml
++  return (
++    <Layout>
++      <Container>
++        <Styled.h1
++          sx={{
++            mb: 5,
++          }}>
++          {speaker.name}
++        </Styled.h1>
++        <Flex
++        sx={{
++          mx: -3,
++          alignItems: 'center',
++          flexWrap: 'wrap',
++        }}>
++        <div
++          sx={{
++            flex: 'none',
++            p: 3,
++            width: [ '100%', '50%' ],
++          }}>
++          <Styled.img
++            src={speaker.image}
++          />
++        </div>
++        <div
++          sx={{
++            flex: 'none',
++            p: 3,
++            width: [ '100%', '50%' ],
++          }}>
++          <Styled.p
++            sx={{
++              mb: 2
++            }}>
++            {speaker.bio}
++          </Styled.p>
++        </div>
++      </Flex>
++      </Container>
++    </Layout>
++  )
++}
++
++export const query = graphql`
++query($id: String!) {
++  speakersYaml(id: { eq: $id }) {
++    id
++    name
++    bio
++    image
++    company
++    twitter
++    github
++    linkedin
++    url
++    dontshow
++  }
++}
++`
+\ No newline at end of file
 diff --git a/node_modules/gatsby-theme-conference/src/use-site-metadata.js b/node_modules/gatsby-theme-conference/src/use-site-metadata.js
 index cca40bf..810ed69 100644
 --- a/node_modules/gatsby-theme-conference/src/use-site-metadata.js

@@ -103,7 +103,7 @@
   company: QXIP
   twitter: qxip
   github: qxip
-  url: http://qxip.net
+  url: https://qxip.net
   linkedin: lmangani
 - id: davehorton
   name: Dave Horton
@@ -165,21 +165,21 @@
   github: lminiero
   linkedin: lorenzo-miniero-8738606
 - id: emil
-  name: Emil
-  image: /assets/speakers/emil.jpg
-  bio: Emil
+  name: Emil Ivov
+  image: /assets/speakers/emil.jpeg
+  bio: Head of product for Meetings and Video Collaboration at 8x8. Jitsi Founder and Project Lead
   company: 8x8
-  twitter: emil
-  github: emil
-  dontshow: true
+  twitter: emilivov
+  github: emilivov
+  linkedin: emilivov
 - id: saghul
-  name: Saghul
+  name: Saúl Ibarra Corretgé
   image: /assets/speakers/saghul.jpg
-  bio: Saghul
+  bio: Open Source and Real Time Communications pundit. Aspiring maker. libuv core janitor. Self-appointed Chief Jitsi Evangelist.
   company: 8x8
-  twitter: emil
-  github: emil
-  dontshow: true
+  twitter: saghul
+  github: saghul
+  linkedin: saghul
 - id: sergio
   name: Sergio Garcia Murillo
   image: /assets/speakers/sergio.jpeg
@@ -204,33 +204,20 @@
   twitter: vr000m
   github: vr000m
   linkedin: vr000m
-- id: holly
-  name: Holly
-  image: /assets/speakers/varun.jpg_large
-  bio: Varun is the founder of https://callstats.io, he runs media quality and connectivity at 8x8. He has a PhD in multimedia networks and coauthor of several standards.
-  company: 8x8
-  twitter: vr000m
-  github: vr000m
-  linkedin: vr000m
-  dontshow: true
 - id: geoff
-  name: Geoff
-  image: /assets/speakers/varun.jpg_large
-  bio: Varun is the founder of https://callstats.io, he runs media quality and connectivity at 8x8. He has a PhD in multimedia networks and coauthor of several standards.
-  company: 8x8
-  twitter: vr000m
-  github: vr000m
-  linkedin: vr000m
-  dontshow: true
+  name: Geoff Willshire
+  image: /assets/speakers/geoff.jpg
+  bio: Geoff is Chief Innovation Officer at Cyara
+  company: Cyara
+  linkedin: geoff-willshire-19005a4
 - id: perry
-  name: Perry
-  image: /assets/speakers/varun.jpg_large
-  bio: Varun is the founder of https://callstats.io, he runs media quality and connectivity at 8x8. He has a PhD in multimedia networks and coauthor of several standards.
-  company: 8x8
-  twitter: vr000m
-  github: vr000m
-  linkedin: vr000m
-  dontshow: true
+  name: Perry Ismangil
+  image: /assets/speakers/perry.jpeg
+  bio: Perry is the Co-Founder at Teluu, the company behind pjsip
+  company: Teluu
+  twitter: ismangil
+  github: ismangil
+  linkedin: ismangil
 - id: danjenkins
   name: Dan Jenkins
   image: /assets/danjenkins.jpg
@@ -241,4 +228,13 @@
   linkedin: jenkinsdaniel
   url: https://nimblea.pe
   dontshow: true
+- id: andriy
+  name: Andriy Pylypenko
+  image: /assets/speakers/andriy.jpg
+  bio: |
+    I studied radio engineering in Zaporizhia National Technical University, Ukraine. Since my diploma in 1992 I worked in telecommunications and IT industries.
+    My experience with VoIP started in 2005. I'm author of Vapp IVR framework which allows to create multilingual IVR applications with small effort. I created a golang port of popular sippy b2bua library. I've contributed to many open source projects.
+    Since 2006 I'm working for Sippy Software as a backend developer.
+    I'm married and have two children.
+  company: Sippy Software, Inc.
 

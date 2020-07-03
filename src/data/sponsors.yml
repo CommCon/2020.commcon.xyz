@@ -80,6 +80,18 @@
   logo: /assets/sponsors/avoxi.svg
   tier: Silver
   twitter: avoxi
+- id: 8x8
+  name: 8x8 / Jitsi
+  url: https://www.8x8.com/
+  logo: /assets/sponsors/8x8.svg
+  tier: Silver
+  twitter: 8x8
+- id: firstcom
+  name: Firstcom Europe
+  url: https://firstcom.co.uk/
+  logo: /assets/sponsors/firstcom.svg
+  tier: Silver
+  twitter: firstcomuk
 - id: qxip
   name: QXIP
   url: https://qxip.net/

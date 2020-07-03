@@ -3,7 +3,8 @@ import { jsx, Styled, Flex } from 'theme-ui'
 import moment  from 'moment-timezone'
 
 import {
-  Youtube
+  Youtube,
+  ExternalLink
 } from 'react-feather'
 
 import {
@@ -17,7 +18,8 @@ export default ({
   speaker,
   title,
   description,
-  youtube
+  youtube,
+  slug
 }) => {
 
   let pacificDiff = moment.utc(datetime).tz('America/Los_Angeles').format('D') - moment.utc(datetime).format('D')
@@ -61,8 +63,9 @@ export default ({
         {title}
       </Styled.h4>
       {speaker && (
-        speaker.map((items) => (
-          <Styled.p>{items.name}</Styled.p>
+        speaker.map((item) => (
+          // <span><Styled.a href={`/speaker/${item.id}`}>{item.name}</Styled.a><br /></span>
+          <p>{item.name}</p>
         ))
       )}
     </div>
@@ -79,6 +82,9 @@ export default ({
           <Youtube />
         </IconLink>
       )}
+      {/* <IconLink href={`/session/${slug}`}>
+        <ExternalLink />
+      </IconLink> */}
     </Flex>
   </Flex>)
 }
