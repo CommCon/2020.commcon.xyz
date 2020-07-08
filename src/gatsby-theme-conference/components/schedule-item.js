@@ -22,8 +22,11 @@ export default ({
   slug
 }) => {
 
+  let localTimezoneGuess = moment.tz.guess(true);
+
   let pacificDiff = moment.utc(datetime).tz('America/Los_Angeles').format('D') - moment.utc(datetime).format('D')
   let australiaDiff = moment.utc(datetime).tz('Australia/Melbourne').format('D') - moment.utc(datetime).format('D')
+  let localDiff = moment.utc(datetime).tz(localTimezoneGuess).format('D') - moment.utc(datetime).format('D')
 
   return (<Flex
     sx={{
@@ -40,13 +43,16 @@ export default ({
           fontSize: 3,
         }}>
         {moment.utc(datetime).tz('Australia/Melbourne').format('HH:mm')} AEST {australiaDiff !== 0 && (
-          `${Math.sign(australiaDiff) ? '+' : '-'} ${australiaDiff} day`
+          `(${Math.sign(australiaDiff) ? '+' : '-'} ${australiaDiff})`
         )}<br />
         {moment.utc(datetime).tz('Europe/Paris').format('HH:mm')} CEST <br />
         {moment.utc(datetime).tz('Europe/London').format('HH:mm')} BST <br />
-        {moment.utc(datetime).tz('America/New_York').format('HH:mm')} EST <br />
-        {moment.utc(datetime).tz('America/Los_Angeles').format('HH:mm')} PST {pacificDiff !== 0 && (
-          `${pacificDiff} day`
+        {moment.utc(datetime).tz('America/New_York').format('HH:mm')} EDT <br />
+        {moment.utc(datetime).tz('America/Los_Angeles').format('HH:mm')} PDT {pacificDiff !== 0 && (
+          `(${pacificDiff})`
+        )}<br />
+        {moment.utc(datetime).tz(localTimezoneGuess).format('HH:mm')} Local {localDiff !== 0 && (
+          `(${localDiff})`
         )}
       </Styled.h3>
     </div>
@@ -82,9 +88,9 @@ export default ({
           <Youtube />
         </IconLink>
       )}
-      {/* <IconLink href={`/session/${slug}`}>
+      <IconLink href={`/session/${slug}`}>
         <ExternalLink />
-      </IconLink> */}
+      </IconLink>
     </Flex>
   </Flex>)
 }

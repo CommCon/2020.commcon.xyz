@@ -70,16 +70,16 @@
     our initial testing of the new component.
   slug: building-a-bigger-badder-b2bua
 - date: 2020-07-15 06:00
-  title: "SFrame.js: End to end encryption for everyone"
+  title: How to test a webRTC service on your own....
   speaker:
-    - sergio
+    - tim
   description: |
-    Due to recent events, e2ee has become a must have in any videoconferencing service, even if your service does not have privacy and security as it's main use case.
+    How can you test a multi user WebRTC service while working in your home
+    office ?
 
-    WebRTC has failed to provide a solution for e2ee in SFU scenarios until insertable streams has been implemented as an experimental feature in Chrome. From PERC to SFrame, we will be talking about what have been the different approaches to provide e2ee and posibles ways in which e2ee will evolve in the near future.
-
-    Last, we will be covering a 1000ft view of what you would need to do to add e2ee support to your service SFrame.js, the pure javascript implementation of SFrame based on webcrypto.
-  slug: sframejs-end-to-end-encryption-for-everyone
+    I'll show how you can (ab)use serverless cloud technology to simulate
+    many users of your service, at a surprisingly low cost.
+  slug: how-to-test-a-webrtc-service-on-your-own
 - date: 2020-07-15 10:00
   title: "Dialing back Telecoms: How to drive our industry back towards an open ecosystem."
   speaker:
@@ -147,16 +147,16 @@
     This talk is mostly going to be me asking a bunch of questions and showing the limited progress so far, so I would encourage people to join the discussion after the talk.
   slug: using-nodered-as-a-visual-asterisk-manager
 - date: 2020-07-17 10:00
-  title: How to test a webRTC service on your own....
+  title: "SFrame.js: End to end encryption for everyone"
   speaker:
-    - tim
+    - sergio
   description: |
-    How can you test a multi user WebRTC service while working in your home
-    office ?
+    Due to recent events, e2ee has become a must have in any videoconferencing service, even if your service does not have privacy and security as it's main use case.
 
-    I'll show how you can (ab)use serverless cloud technology to simulate
-    many users of your service, at a surprisingly low cost.
-  slug: how-to-test-a-webrtc-service-on-your-own
+    WebRTC has failed to provide a solution for e2ee in SFU scenarios until insertable streams has been implemented as an experimental feature in Chrome. From PERC to SFrame, we will be talking about what have been the different approaches to provide e2ee and posibles ways in which e2ee will evolve in the near future.
+
+    Last, we will be covering a 1000ft view of what you would need to do to add e2ee support to your service SFrame.js, the pure javascript implementation of SFrame based on webcrypto.
+  slug: sframejs-end-to-end-encryption-for-everyone
 - date: 2020-07-17 14:00
   title: "jambonz: the \"little\" open source CPaaS"
   speaker:
