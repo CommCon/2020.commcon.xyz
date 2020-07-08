@@ -61,9 +61,9 @@
   name: Sean DuBois
   image: /assets/speakers/seandubois.jpg
   bio: |
-    Sean maintains Pion and enjoys working on a few other Open Source RTP projects. He started his career he had was his time at the Recurse Center, where he learned C and Scheme.
-    He learned basics of Open Source thanks to the PHP community. During the PHP 5 -> 7 migration he added Class Constants to the language and migrated multiple extensions. The thing that makes him most passionate about Open Source is the oppurtunies it can afford anyone if they put the effort in.
-    You can build things that enrich the lives of people and working with fantastic people. He lives in Seattle with his wife.
+    Sean maintains Pion and enjoys working on a few other Open Source RTC projects. He started his career by attending the Recurse Center, an educational retreat for programmers.
+    At Etsy he learned the basics of Open Source thanks to the PHP community. He ported multiple extensions from PHP 5 -> 7 migration and added Class Constants.
+    He is passionate about Open Source because it allows anyone to be involved. You can build things that enrich everyone's lives and work with fantastic people. He lives in Seattle with his wife and soon to be daughter.
   company: Pion
   twitter: _pion
   github: pion
