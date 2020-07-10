@@ -1,0 +1,93 @@
+diff --git a/node_modules/gatsby-source-youtube/gatsby-node.js b/node_modules/gatsby-source-youtube/gatsby-node.js
+index 4679fd9..a60d617 100644
+--- a/node_modules/gatsby-source-youtube/gatsby-node.js
++++ b/node_modules/gatsby-source-youtube/gatsby-node.js
+@@ -49,7 +49,7 @@ exports.sourceNodes = function () {
+         _ref2$maxVideos = _ref2.maxVideos,
+         maxVideos = _ref2$maxVideos === undefined ? 50 : _ref2$maxVideos;
+ 
+-    var createNode, api, channelResp, channelData, _videos, uploadsId, videos, pageSize, videoResp, _videos2, nextPageToken;
++    var createNode, api, channelResp, channelData, _videos, _videoIds, _videoIds2, uploadsId, videos, pageSize, videoResp, _videos2, nextPageToken;
+ 
+     return regeneratorRuntime.wrap(function _callee$(_context) {
+       while (1) {
+@@ -74,7 +74,7 @@ exports.sourceNodes = function () {
+             videos = [];
+             pageSize = Math.min(50, maxVideos);
+             _context.next = 13;
+-            return api.get("playlistItems?part=snippet%2CcontentDetails%2Cstatus&maxResults=" + pageSize + "&playlistId=" + uploadsId + "&key=" + apiKey);
++            return api.get("playlistItems?part=contentDetails&maxResults=" + pageSize + "&playlistId=" + uploadsId + "&key=" + apiKey);
+ 
+           case 13:
+             videoResp = _context.sent;
+@@ -83,14 +83,14 @@ exports.sourceNodes = function () {
+ 
+           case 15:
+             if (!(videoResp.data.nextPageToken && videos.length < maxVideos)) {
+-              _context.next = 24;
++              _context.next = 21;
+               break;
+             }
+ 
+             pageSize = Math.min(50, maxVideos - videos.length);
+             nextPageToken = videoResp.data.nextPageToken;
+             _context.next = 20;
+-            return api.get("playlistItems?part=snippet%2CcontentDetails%2Cstatus&maxResults=" + pageSize + "&pageToken=" + nextPageToken + "&playlistId=" + uploadsId + "&key=" + apiKey);
++            return api.get("playlistItems?part=contentDetails&maxResults=" + pageSize + "&pageToken=" + nextPageToken + "&playlistId=" + uploadsId + "&key=" + apiKey);
+ 
+           case 20:
+             videoResp = _context.sent;
+@@ -99,8 +99,35 @@ exports.sourceNodes = function () {
+             _context.next = 15;
+             break;
+ 
+-          case 24:
++          case 21:
++            //go get all the video ids
++            _videoIds = [];
++            videos.forEach(playlistItem => {
++              _videoIds.push(playlistItem.contentDetails.videoId)
++            });
++          case 22:
++            _videoIds2 = _videoIds;
++            //go get the first 50 if more than 50
++            if (_videoIds.length > 50) {
++              _videoIds2 = _videoIds.slice(0,49)
++              _videoIds = _videoIds.slice(50)
++            } else {
++              _context.next = 24;
++              break;
++            }
++
++            _context.next = 23;
++            return api.get("videos?id=" + _videoIds2.join('%2C') + "&part=contentDetails%2CliveStreamingDetails%2Csnippet%2Cstatus&key=" + apiKey);
++          case 23:
+ 
++            videoResp = _context.sent;
++
++            (_videos2 = videos).push.apply(_videos2, _toConsumableArray(videoResp.data.items));
++            _context.next = 22;
++
++
++            break;
++          case 24:
+             videos = normalize.normalizeRecords(videos);
+             videos = normalize.createGatsbyIds(videos, createNodeId);
+             _context.next = 28;
+diff --git a/node_modules/gatsby-source-youtube/normalize.js b/node_modules/gatsby-source-youtube/normalize.js
+index 87f08ab..1fbfad3 100644
+--- a/node_modules/gatsby-source-youtube/normalize.js
++++ b/node_modules/gatsby-source-youtube/normalize.js
+@@ -33,7 +33,12 @@ exports.normalizeRecords = function (items) {
+       title: get(item, "snippet.title"),
+       description: get(item, "snippet.description"),
+       videoId: get(item, "contentDetails.videoId"),
++      tags: get(item, "snippet.tags"),
+       privacyStatus: get(item, "status.privacyStatus"),
++      liveBroadcastContent: get(item, "snippet.liveBroadcastContent"),
++      scheduledStartTime: get(item, "liveStreamingDetails.scheduledStartTime"),
++      scheduledEndTime: get(item, "liveStreamingDetails.scheduledEndTime"),
++      activeLiveChatId: get(item, "liveStreamingDetails.activeLiveChatId"),
+       thumbnail: get(item, "snippet.thumbnails.maxres", get(item, "snippet.thumbnails.standard", get(item, "snippet.thumbnails.high", get(item, "snippet.thumbnails.medium", get(item, "snippet.thumbnails.default")))))
+     };
+ 

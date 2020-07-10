@@ -105,3 +105,10 @@
   logo: /assets/sponsors/cycore.svg
   tier: Community
   github: CyCoreSystems
+- id: psp
+  name: PSP
+  url: https://pspav.com/
+  logo: /assets/sponsors/psp.svg
+  tier: AV Partners
+  twitter: PSPAV
+

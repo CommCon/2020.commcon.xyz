@@ -43,12 +43,18 @@
     its data  with your services.
   slug: homer-for-webrtc
 - date: 2020-07-14 10:00
-  title: Jitsi
+  title: "Jitsi: State of the Union 2020"
   speaker:
-    - emil
     - saghul
   description: |
-    Jitsi
+    2020 shall be remembered as one of the strangest years in history. The
+    current world events have pushed the envelope of remote working and the
+    tools required to do so. As the makers of one of the most comprehensive
+    video collaboration platforms in the industry, the Jitsi team at 8x8 has
+    been hard at work making sure our users got the best video experience
+    just when they needed it the most. In this presentation we will explore
+    the latest developments in our projects, how the world events affected
+    us and what the future holds.
   slug: jitsi
 - date: 2020-07-14 14:00
   title: Cyara

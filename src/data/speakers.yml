@@ -164,18 +164,15 @@
   twitter: elminiero
   github: lminiero
   linkedin: lorenzo-miniero-8738606
-- id: emil
-  name: Emil Ivov
-  image: /assets/speakers/emil.jpeg
-  bio: Head of product for Meetings and Video Collaboration at 8x8. Jitsi Founder and Project Lead
-  company: 8x8 / Jitsi
-  twitter: emilivov
-  github: emilivov
-  linkedin: emilivov
 - id: saghul
   name: Saúl Ibarra Corretgé
   image: /assets/speakers/saghul.jpg
-  bio: Open Source and Real Time Communications pundit. Aspiring maker. libuv core janitor. Self-appointed Chief Jitsi Evangelist.
+  bio: |
+    Saúl is a Real Time Communications pundit and Fellow Jitster. He started
+    tinkering with Asterisk in 2005 and hasn’t stopped working on the Real
+    Time Communications field ever since. He works for 8x8 on the Jitsi team,
+    specializing on the mobile apps. He is also the Self-appointed Chief Jitsi
+    Evangelist.
   company: 8x8 / Jitsi
   twitter: saghul
   github: saghul

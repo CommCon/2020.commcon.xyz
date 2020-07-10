@@ -416,23 +416,30 @@ index 66015ba..f65f8e2 100644
      <Sponsors sponsors={sponsors} />
 diff --git a/node_modules/gatsby-theme-conference/src/layouts/live.js b/node_modules/gatsby-theme-conference/src/layouts/live.js
 new file mode 100644
-index 0000000..8bbe240
+index 0000000..4191a68
 --- /dev/null
 +++ b/node_modules/gatsby-theme-conference/src/layouts/live.js
-@@ -0,0 +1,25 @@
+@@ -0,0 +1,32 @@
 +/** @jsx jsx */
 +import { Styled, jsx, Container } from 'theme-ui'
-+import orderBy from 'lodash.orderby'
 +import Layout from '../components/layout'
++import Helmet from 'react-helmet'
++import YouTube from 'react-youtube'
 +
 +export default ({
 +  data,
 +}) => {
 +  const schedule = data.allScheduleYaml.edges.map(edge => edge.node)
-+  // let ordered = orderBy(schedule, 'datetime')
++
++  // let futureSessions = schedule.filter((session) => {
++  //   if (session.date)
++  // });
 +
 +  return (
 +    <Layout>
++      <Helmet>
++        <title>Live</title>
++      </Helmet>
 +      <Container>
 +        <Styled.h1
 +          sx={{
@@ -440,7 +447,7 @@ index 0000000..8bbe240
 +          }}>
 +            Live
 +        </Styled.h1>
-+
++        <iframe src="/riot.html" width="800" height="800"></iframe>
 +      </Container>
 +    </Layout>
 +  )
@@ -522,10 +529,10 @@ index 91b3290..e685e4c 100644
    }
 diff --git a/node_modules/gatsby-theme-conference/src/pages/live.js b/node_modules/gatsby-theme-conference/src/pages/live.js
 new file mode 100644
-index 0000000..4f0be4f
+index 0000000..8f69a7a
 --- /dev/null
 +++ b/node_modules/gatsby-theme-conference/src/pages/live.js
-@@ -0,0 +1,26 @@
+@@ -0,0 +1,43 @@
 +import { graphql } from 'gatsby'
 +import Live from '../layouts/live'
 +
@@ -550,8 +557,25 @@ index 0000000..4f0be4f
 +        }
 +      }
 +    }
++    allYoutubeVideo {
++      edges {
++        node {
++          id
++          title
++          description
++          videoId
++          publishedAt
++          privacyStatus
++
++        }
++      }
++    }
 +  }
 +`
++
++//liveBroadcastContent
++//scheduledStartTime
++//scheduledEndTime
 diff --git a/node_modules/gatsby-theme-conference/src/pages/schedule.js b/node_modules/gatsby-theme-conference/src/pages/schedule.js
 index 51b1e72..c12231f 100644
 --- a/node_modules/gatsby-theme-conference/src/pages/schedule.js
@@ -587,17 +611,30 @@ index 94fbe9b..f1f6f3e 100644
      }
 diff --git a/node_modules/gatsby-theme-conference/src/templates/session.js b/node_modules/gatsby-theme-conference/src/templates/session.js
 new file mode 100644
-index 0000000..e365069
+index 0000000..145791a
 --- /dev/null
 +++ b/node_modules/gatsby-theme-conference/src/templates/session.js
-@@ -0,0 +1,56 @@
+@@ -0,0 +1,96 @@
 +import React from "react"
 +import { graphql } from "gatsby"
 +import Layout from "../components/layout"
 +import { Styled, Container, Flex } from 'theme-ui'
++import YouTube from 'react-youtube'
++import FlexList from '../components/flex-list'
++import SpeakerCard from '../components/speaker-card'
 +
 +export default function SchedulePage({ data }) {
 +  const schedule = data.scheduleYaml
++
++  const opts = {
++    height: '390',
++    width: '640',
++    playerVars: {
++      // https://developers.google.com/youtube/player_parameters
++      autoplay: 1,
++    },
++  }
++
 +  return (
 +    <Layout>
 +      <Container>
@@ -626,7 +663,25 @@ index 0000000..e365069
 +            {schedule.description}
 +          </Styled.p>
 +        </div>
++        {schedule.youtubeid && (
++          <YouTube videoId={schedule.youtubeid} opts={opts} />
++        )}
 +      </Flex>
++      <FlexList
++        sx={{
++          justifyContent: 'center',
++        }}>
++        {schedule.speaker.map(speaker => {
++          if (!speaker.dontshow)
++          return (
++            <SpeakerCard
++              key={speaker.id}
++              as='li'
++              {...speaker}
++            />
++          )
++        })}
++      </FlexList>
 +      </Container>
 +    </Layout>
 +  )
@@ -639,10 +694,19 @@ index 0000000..e365069
 +    time: date(formatString: "h:mm a")
 +    title
 +    description
++    youtubeid
 +    speaker {
-+      name
-+      company
 +      id
++      name
++      bio
++      image
++      company
++      twitter
++      github
++      linkedin
++      url
++      dontshow
++
 +    }
 +  }
 +}
@@ -650,7 +714,7 @@ index 0000000..e365069
 \ No newline at end of file
 diff --git a/node_modules/gatsby-theme-conference/src/templates/speaker.js b/node_modules/gatsby-theme-conference/src/templates/speaker.js
 new file mode 100644
-index 0000000..bd50514
+index 0000000..5b0c8fa
 --- /dev/null
 +++ b/node_modules/gatsby-theme-conference/src/templates/speaker.js
 @@ -0,0 +1,67 @@
@@ -680,7 +744,7 @@ index 0000000..bd50514
 +          sx={{
 +            flex: 'none',
 +            p: 3,
-+            width: [ '100%', '50%' ],
++            maxWidth: [ '100%', '50%' ],
 +          }}>
 +          <Styled.img
 +            src={speaker.image}

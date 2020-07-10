@@ -1,3 +1,8 @@
+const process = require('process')
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   pathPrefix: '/',
   siteMetadata: {
@@ -17,6 +22,15 @@ module.exports = {
           'poppins\:400,600,900'
         ]
       }
-    }
+    },
+    // 'gatsby-plugin-react-helmet'
+    {
+      resolve: `gatsby-source-youtube`,
+      options: {
+        channelId: 'UCe_eAP4ToqFLSxzvkTlNzUQ',
+        apiKey: process.env.YOUTUBE_API_KEY,
+        maxVideos:  100
+      },
+    },
   ]
 }
