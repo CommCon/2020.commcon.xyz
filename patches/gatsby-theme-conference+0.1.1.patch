@@ -611,10 +611,10 @@ index 94fbe9b..f1f6f3e 100644
      }
 diff --git a/node_modules/gatsby-theme-conference/src/templates/session.js b/node_modules/gatsby-theme-conference/src/templates/session.js
 new file mode 100644
-index 0000000..145791a
+index 0000000..e8d8632
 --- /dev/null
 +++ b/node_modules/gatsby-theme-conference/src/templates/session.js
-@@ -0,0 +1,96 @@
+@@ -0,0 +1,97 @@
 +import React from "react"
 +import { graphql } from "gatsby"
 +import Layout from "../components/layout"
@@ -694,7 +694,6 @@ index 0000000..145791a
 +    time: date(formatString: "h:mm a")
 +    title
 +    description
-+    youtubeid
 +    speaker {
 +      id
 +      name
@@ -711,7 +710,8 @@ index 0000000..145791a
 +  }
 +}
 +`
-\ No newline at end of file
++
++// youtubeid
 diff --git a/node_modules/gatsby-theme-conference/src/templates/speaker.js b/node_modules/gatsby-theme-conference/src/templates/speaker.js
 new file mode 100644
 index 0000000..5b0c8fa
