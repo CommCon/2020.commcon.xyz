@@ -32,5 +32,48 @@ module.exports = {
         maxVideos:  100
       },
     },
+    {
+      resolve: `gatsby-plugin-ical`,
+      options: {
+        query: `query {
+          allScheduleYaml(filter: {}) {
+            edges {
+              node {
+                id
+                slug
+                speaker {
+                  name
+                }
+                title
+                description
+                date
+                end: date
+              }
+            }
+          }
+        }`,
+        filename: 'calendar.ics',
+        domain: 'https://2020.commcon.xyz/session/',
+        calendar: {
+            filename: `calendar.ics`,
+            prodId: '//Organization//Calendar//EN',
+            domain: '2020.commcon.xyz',
+            name: 'CommCon Virtual 2020',
+            url: 'https://2020.commcon.xyz/calendar.ics',
+            scale: 'gregorian',
+            timezone: 'Europe/London',
+            ttl: 60*60*24,
+        },
+        event: {
+            uid: 'id',
+            start: 'start',
+            end: 'end',
+            summary: 'summary',
+            description: 'description',
+            location: 'location',
+            url: 'url'
+        }
+      }
+    }
   ]
 }

@@ -1,3 +1,15 @@
+diff --git a/node_modules/gatsby-theme-conference/gatsby-config.js b/node_modules/gatsby-theme-conference/gatsby-config.js
+index a062450..0a57ba3 100644
+--- a/node_modules/gatsby-theme-conference/gatsby-config.js
++++ b/node_modules/gatsby-theme-conference/gatsby-config.js
+@@ -9,6 +9,7 @@ module.exports = {
+   },
+   mapping: {
+     'ScheduleYaml.speaker': `SpeakersYaml`,
++    //'ScheduleYaml.youtubeid': `youtubeVideo.originalId`,
+   },
+   plugins: [
+     'gatsby-plugin-theme-ui',
 diff --git a/node_modules/gatsby-theme-conference/gatsby-node.js b/node_modules/gatsby-theme-conference/gatsby-node.js
 index b278f4f..dc64d5f 100644
 --- a/node_modules/gatsby-theme-conference/gatsby-node.js
@@ -174,7 +186,7 @@ index c3eb5b4..b485676 100644
      </div>
    </Flex>
 diff --git a/node_modules/gatsby-theme-conference/src/components/schedule.js b/node_modules/gatsby-theme-conference/src/components/schedule.js
-index d0506b6..8c26c27 100644
+index d0506b6..cd5025c 100644
 --- a/node_modules/gatsby-theme-conference/src/components/schedule.js
 +++ b/node_modules/gatsby-theme-conference/src/components/schedule.js
 @@ -17,7 +17,7 @@ export default ({
@@ -186,6 +198,20 @@ index d0506b6..8c26c27 100644
          </SectionHeading>
          {Object.keys(days).map(date => (
            <div key={date}>
+@@ -38,6 +38,13 @@ export default ({
+           to='/schedule'>
+           View full schedule
+         </Styled.a>
++        <br />
++        <Styled.a
++          as={Link}
++          target="_blank"
++          href='/calendar.ics'>
++          Add to your calendar
++        </Styled.a>
+       </Container>
+     </div>
+   )
 diff --git a/node_modules/gatsby-theme-conference/src/components/speaker-card.js b/node_modules/gatsby-theme-conference/src/components/speaker-card.js
 index 111dc21..9e34bf6 100644
 --- a/node_modules/gatsby-theme-conference/src/components/speaker-card.js
@@ -416,39 +442,68 @@ index 66015ba..f65f8e2 100644
      <Sponsors sponsors={sponsors} />
 diff --git a/node_modules/gatsby-theme-conference/src/layouts/live.js b/node_modules/gatsby-theme-conference/src/layouts/live.js
 new file mode 100644
-index 0000000..4191a68
+index 0000000..568d060
 --- /dev/null
 +++ b/node_modules/gatsby-theme-conference/src/layouts/live.js
-@@ -0,0 +1,32 @@
+@@ -0,0 +1,61 @@
 +/** @jsx jsx */
 +import { Styled, jsx, Container } from 'theme-ui'
 +import Layout from '../components/layout'
++import Button from '../components/button'
++import { Link } from 'gatsby'
 +import Helmet from 'react-helmet'
 +import YouTube from 'react-youtube'
 +
 +export default ({
 +  data,
 +}) => {
-+  const schedule = data.allScheduleYaml.edges.map(edge => edge.node)
++  const videos = data.allYoutubeVideo.edges.map(edge => edge.node)
 +
-+  // let futureSessions = schedule.filter((session) => {
-+  //   if (session.date)
-+  // });
++  const opts = {
++    height: '500',
++    width: '100%',
++    playerVars: {
++      // https://developers.google.com/youtube/player_parameters
++      autoplay: 1,
++    },
++  }
++  let id = null;
++  videos.some((video) => {
++    if (video.liveBroadcastContent === 'live' || video.liveBroadcastContent === 'upcoming') {
++      id = video.originalID
++      return true;
++    }
++  })
 +
 +  return (
 +    <Layout>
 +      <Helmet>
 +        <title>Live</title>
++        <style type="text/css">{`
++          .youtubeContainer {
++            width: 50%;
++          }
++        `}</style>
 +      </Helmet>
-+      <Container>
++      <div>
 +        <Styled.h1
 +          sx={{
 +            mb: 5,
 +          }}>
 +            Live
 +        </Styled.h1>
-+        <iframe src="/riot.html" width="800" height="800"></iframe>
-+      </Container>
++        <div
++          sx={{
++            display: 'flex',
++            flexWrap: 'wrap',
++          }}
++        >
++          <iframe src="/riot.html" width="50%" height="500"></iframe>
++          <YouTube containerClassName='youtubeContainer' videoId={id} opts={opts}/>
++        </div>
++        <p>Join the conversation over on Riot</p>
++        <Button as={Link} to='https://riot.commcon.xyz'>Join Riot</Button>
++      </div>
 +    </Layout>
 +  )
 +}
@@ -466,7 +521,7 @@ index bce310c..8c79bb3 100644
          {Object.keys(days).map(date => (
            <div key={date}>
 diff --git a/node_modules/gatsby-theme-conference/src/pages/index.js b/node_modules/gatsby-theme-conference/src/pages/index.js
-index 91b3290..e685e4c 100644
+index 91b3290..5fd60f9 100644
 --- a/node_modules/gatsby-theme-conference/src/pages/index.js
 +++ b/node_modules/gatsby-theme-conference/src/pages/index.js
 @@ -34,6 +34,9 @@ export const pageQuery = graphql`
@@ -479,7 +534,7 @@ index 91b3290..e685e4c 100644
          }
        }
      }
-@@ -45,12 +48,16 @@ export const pageQuery = graphql`
+@@ -45,19 +48,25 @@ export const pageQuery = graphql`
            url
            logo
            tier
@@ -496,7 +551,8 @@ index 91b3290..e685e4c 100644
            date(formatString: "ddd, MMM Do")
            time: date(formatString: "h:mm a")
            title
-@@ -58,6 +65,7 @@ export const pageQuery = graphql`
++          youtubeid
+           description
            speaker {
              name
              company
@@ -504,7 +560,7 @@ index 91b3290..e685e4c 100644
            }
          }
        }
-@@ -71,7 +79,9 @@ export const pageQuery = graphql`
+@@ -71,7 +80,9 @@ export const pageQuery = graphql`
            image
            company
            twitter
@@ -515,7 +571,7 @@ index 91b3290..e685e4c 100644
          }
        }
      }
-@@ -79,10 +89,9 @@ export const pageQuery = graphql`
+@@ -79,10 +90,9 @@ export const pageQuery = graphql`
        venue {
          title
          address
@@ -529,10 +585,10 @@ index 91b3290..e685e4c 100644
    }
 diff --git a/node_modules/gatsby-theme-conference/src/pages/live.js b/node_modules/gatsby-theme-conference/src/pages/live.js
 new file mode 100644
-index 0000000..8f69a7a
+index 0000000..5ff7f19
 --- /dev/null
 +++ b/node_modules/gatsby-theme-conference/src/pages/live.js
-@@ -0,0 +1,43 @@
+@@ -0,0 +1,42 @@
 +import { graphql } from 'gatsby'
 +import Live from '../layouts/live'
 +
@@ -548,6 +604,7 @@ index 0000000..8f69a7a
 +          date(formatString: "ddd, MMM Do")
 +          time: date(formatString: "h:mm a")
 +          title
++          youtubeid
 +          description
 +          speaker {
 +            name
@@ -557,7 +614,7 @@ index 0000000..8f69a7a
 +        }
 +      }
 +    }
-+    allYoutubeVideo {
++    allYoutubeVideo(filter: {tags: {in: "2020"}}, sort: {fields: scheduledStartTime, order: ASC}) {
 +      edges {
 +        node {
 +          id
@@ -566,21 +623,19 @@ index 0000000..8f69a7a
 +          videoId
 +          publishedAt
 +          privacyStatus
-+
++          liveBroadcastContent
++          scheduledStartTime
++          originalID
 +        }
 +      }
 +    }
 +  }
 +`
-+
-+//liveBroadcastContent
-+//scheduledStartTime
-+//scheduledEndTime
 diff --git a/node_modules/gatsby-theme-conference/src/pages/schedule.js b/node_modules/gatsby-theme-conference/src/pages/schedule.js
-index 51b1e72..c12231f 100644
+index 51b1e72..9bee324 100644
 --- a/node_modules/gatsby-theme-conference/src/pages/schedule.js
 +++ b/node_modules/gatsby-theme-conference/src/pages/schedule.js
-@@ -8,6 +8,8 @@ export const pageQuery = graphql`
+@@ -8,13 +8,17 @@ export const pageQuery = graphql`
      allScheduleYaml {
        edges {
          node {
@@ -589,7 +644,8 @@ index 51b1e72..c12231f 100644
            date(formatString: "ddd, MMM Do")
            time: date(formatString: "h:mm a")
            title
-@@ -15,6 +17,7 @@ export const pageQuery = graphql`
+           description
++          youtubeid
            speaker {
              name
              company
@@ -611,10 +667,10 @@ index 94fbe9b..f1f6f3e 100644
      }
 diff --git a/node_modules/gatsby-theme-conference/src/templates/session.js b/node_modules/gatsby-theme-conference/src/templates/session.js
 new file mode 100644
-index 0000000..e8d8632
+index 0000000..b16571d
 --- /dev/null
 +++ b/node_modules/gatsby-theme-conference/src/templates/session.js
-@@ -0,0 +1,97 @@
+@@ -0,0 +1,180 @@
 +import React from "react"
 +import { graphql } from "gatsby"
 +import Layout from "../components/layout"
@@ -622,21 +678,36 @@ index 0000000..e8d8632
 +import YouTube from 'react-youtube'
 +import FlexList from '../components/flex-list'
 +import SpeakerCard from '../components/speaker-card'
++import moment  from 'moment-timezone'
++import Helmet from 'react-helmet'
 +
 +export default function SchedulePage({ data }) {
 +  const schedule = data.scheduleYaml
 +
 +  const opts = {
 +    height: '390',
-+    width: '640',
++    width: '100%',
 +    playerVars: {
 +      // https://developers.google.com/youtube/player_parameters
 +      autoplay: 1,
 +    },
 +  }
 +
++  let localTimezoneGuess = moment.tz.guess(true);
++
++  let pacificDiff = moment.utc(schedule.datetime).tz('America/Los_Angeles').format('D') - moment.utc(schedule.datetime).format('D')
++  let australiaDiff = moment.utc(schedule.datetime).tz('Australia/Melbourne').format('D') - moment.utc(schedule.datetime).format('D')
++  let localDiff = moment.utc(schedule. datetime).tz(localTimezoneGuess).format('D') - moment.utc(schedule.datetime).format('D')
++
 +  return (
 +    <Layout>
++      <Helmet>
++        <style type="text/css">{`
++          .youtubeContainer {
++            width: 100%;
++          }
++        `}</style>
++      </Helmet>
 +      <Container>
 +        <Styled.h1
 +          sx={{
@@ -645,43 +716,113 @@ index 0000000..e8d8632
 +          {schedule.title}
 +        </Styled.h1>
 +        <Flex
-+        sx={{
-+          mx: -3,
-+          alignItems: 'center',
-+          flexWrap: 'wrap',
-+        }}>
-+        <div
 +          sx={{
-+            flex: 'none',
-+            p: 3,
-+            width: [ '100%', '100%' ],
-+          }}>
-+          <Styled.p
++            mx: -3,
++            alignItems: 'center',
++            flexWrap: 'wrap',
++          }}
++        >
++          <div
++            style={{
++              width: "100%"
++            }}
++          >
++            <Styled.h2>
++              Airing {schedule.date}
++            </Styled.h2>
++            <FlexList>
++              <div
++                style={{
++                  width: "16%"
++                }}
++              >
++                <Styled.h3>AEST</Styled.h3>
++                <p>{moment.utc(schedule.datetime).tz('Australia/Melbourne').format('HH:mm')}{australiaDiff !== 0 && (
++                  `(${Math.sign(australiaDiff) ? '+' : '-'} ${australiaDiff})`)}
++                </p>
++              </div>
++              <div
++                style={{
++                  width: "16%"
++                }}
++              >
++                <Styled.h3>CEST</Styled.h3>
++                <p>{moment.utc(schedule.datetime).tz('Europe/Paris').format('HH:mm')}</p>
++              </div>
++              <div
++                style={{
++                  width: "16%"
++                }}
++              >
++                <Styled.h3>BST</Styled.h3>
++                <p>{moment.utc(schedule.datetime).tz('Europe/London').format('HH:mm')}</p>
++              </div>
++              <div
++                style={{
++                  width: "16%"
++                }}
++              >
++                <Styled.h3>EDT</Styled.h3>
++                <p>{moment.utc(schedule.datetime).tz('America/New_York').format('HH:mm')}</p>
++              </div>
++              <div
++                style={{
++                  width: "16%"
++                }}
++              >
++                <Styled.h3>PDT</Styled.h3>
++                <p>{moment.utc(schedule.datetime).tz('America/Los_Angeles').format('HH:mm')}{pacificDiff !== 0 && (
++                  `(${pacificDiff})`)}
++                </p>
++              </div>
++              <div
++                style={{
++                  width: "16%"
++                }}
++              >
++                <Styled.h3>Local</Styled.h3>
++                <p>{moment.utc(schedule.datetime).tz(localTimezoneGuess).format('HH:mm')} Local {localDiff !== 0 && (
++                  `(${localDiff})`)}
++                </p>
++              </div>
++            </FlexList>
++          </div>
++          <div
 +            sx={{
-+              mb: 2
++              flex: 'none',
++              p: 3,
++              width: [ '100%', '100%' ],
 +            }}>
-+            {schedule.description}
-+          </Styled.p>
-+        </div>
-+        {schedule.youtubeid && (
-+          <YouTube videoId={schedule.youtubeid} opts={opts} />
-+        )}
-+      </Flex>
-+      <FlexList
-+        sx={{
-+          justifyContent: 'center',
-+        }}>
-+        {schedule.speaker.map(speaker => {
-+          if (!speaker.dontshow)
-+          return (
-+            <SpeakerCard
-+              key={speaker.id}
-+              as='li'
-+              {...speaker}
-+            />
-+          )
-+        })}
-+      </FlexList>
++            <Styled.h2>Description</Styled.h2>
++            <Styled.p
++              sx={{
++                mb: 2
++              }}>
++              {schedule.description}
++            </Styled.p>
++          </div>
++          {schedule.youtubeid && (
++            <YouTube containerClassName='youtubeContainer' videoId={schedule.youtubeid} opts={opts} />
++          )}
++        </Flex>
++        <Styled.h2>
++          Speaker{schedule.speaker.length > 1 ? 's' : ''}
++        </Styled.h2>
++        <FlexList
++          sx={{
++            justifyContent: 'center',
++          }}>
++          {schedule.speaker.map(speaker => {
++            if (!speaker.dontshow)
++            return (
++              <SpeakerCard
++                key={speaker.id}
++                as='li'
++                {...speaker}
++              />
++            )
++          })}
++        </FlexList>
 +      </Container>
 +    </Layout>
 +  )
@@ -694,6 +835,7 @@ index 0000000..e8d8632
 +    time: date(formatString: "h:mm a")
 +    title
 +    description
++    youtubeid
 +    speaker {
 +      id
 +      name
@@ -705,19 +847,17 @@ index 0000000..e8d8632
 +      linkedin
 +      url
 +      dontshow
-+
 +    }
 +  }
 +}
 +`
-+
-+// youtubeid
+\ No newline at end of file
 diff --git a/node_modules/gatsby-theme-conference/src/templates/speaker.js b/node_modules/gatsby-theme-conference/src/templates/speaker.js
 new file mode 100644
-index 0000000..5b0c8fa
+index 0000000..da7cf38
 --- /dev/null
 +++ b/node_modules/gatsby-theme-conference/src/templates/speaker.js
-@@ -0,0 +1,67 @@
+@@ -0,0 +1,68 @@
 +import React from "react"
 +import { graphql } from "gatsby"
 +import Layout from "../components/layout"
@@ -741,12 +881,13 @@ index 0000000..5b0c8fa
 +          flexWrap: 'wrap',
 +        }}>
 +        <div
-+          sx={{
-+            flex: 'none',
-+            p: 3,
-+            maxWidth: [ '100%', '50%' ],
++          style={{
++            maxWidth: '50%',
 +          }}>
 +          <Styled.img
++            style={{
++              maxWidth: '100%'
++            }}
 +            src={speaker.image}
 +          />
 +        </div>

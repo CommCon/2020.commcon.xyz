@@ -1,10 +1,12 @@
 /** @jsx jsx */
-import { jsx, Styled, Flex } from 'theme-ui'
+import { jsx, Styled, Flex, Box } from 'theme-ui'
 import moment  from 'moment-timezone'
+import useWebShare from 'react-use-web-share'
 
 import {
   Youtube,
-  ExternalLink
+  ExternalLink,
+  Share2
 } from 'react-feather'
 
 import {
@@ -18,7 +20,7 @@ export default ({
   speaker,
   title,
   description,
-  youtube,
+  youtubeid,
   slug
 }) => {
 
@@ -27,6 +29,8 @@ export default ({
   let pacificDiff = moment.utc(datetime).tz('America/Los_Angeles').format('D') - moment.utc(datetime).format('D')
   let australiaDiff = moment.utc(datetime).tz('Australia/Melbourne').format('D') - moment.utc(datetime).format('D')
   let localDiff = moment.utc(datetime).tz(localTimezoneGuess).format('D') - moment.utc(datetime).format('D')
+
+  const { isSupported, loading, share } = useWebShare();
 
   return (<Flex
     sx={{
@@ -70,8 +74,8 @@ export default ({
       </Styled.h4>
       {speaker && (
         speaker.map((item) => (
-          // <span><Styled.a href={`/speaker/${item.id}`}>{item.name}</Styled.a><br /></span>
-          <p>{item.name}</p>
+          <span><Styled.a href={`/speaker/${item.id}`}>{item.name}</Styled.a><br /></span>
+          // <p>{item.name}</p>
         ))
       )}
     </div>
@@ -83,14 +87,37 @@ export default ({
       </Styled.p>
     </div>
     <Flex mx={-2}>
-      {youtube && (
-        <IconLink href={youtube}>
+      {youtubeid && (
+        <IconLink href={`https://www.youtube.com/watch?v=${youtubeid}`}>
           <Youtube />
         </IconLink>
       )}
       <IconLink href={`/session/${slug}`}>
         <ExternalLink />
       </IconLink>
+      { !loading && isSupported && (
+        <Box
+          sx={{
+            display: 'inline-block',
+            p: 2,
+            color: 'inherit',
+            textDecoration: 'none',
+            '&:hover': {
+              color: 'primary',
+            },
+            '& > svg': {
+              display: 'inline-block',
+              verticalAlign: 'middle',
+            }
+          }}
+        >
+          <Share2 onClick={share.bind(share, {
+            title: title,
+            text: title,
+            url: `/session/${slug}`
+          })}/>
+        </Box>
+      )}
     </Flex>
   </Flex>)
 }

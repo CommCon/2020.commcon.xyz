@@ -2,11 +2,9 @@
   title: Turning live events to virtual with Janus
   speaker: ["lorenzominiero"]
   description: |
-    Up until recently, a good chunk of our business consisted in streaming
-    live events (e.g., IETF meetings) via WebRTC, facilitating remote participation.
-    Then the world changed, and so must we. This talk will describe some of the strategies
-    we followed to host completely virtual events using Janus.
+    Up until recently, a good chunk of our business consisted in streaming live events (e.g., IETF meetings) via WebRTC, facilitating remote participation. Then the world changed, and so must we. This talk will describe some of the strategies we followed to host completely virtual events using Janus.
   slug: turning-live-events-to-virtual-with-janus
+  youtubeid: oSZw90guaUw
 - date: 2020-07-13 10:00
   title: Teluu
   speaker:
@@ -15,6 +13,7 @@
   description: |
     Perry and Dan get together and chat about Teluu, PJSIP and their commitment to Open Source.
   slug: teluu-interview
+  youtubeid: "mOzAJamcw4g"
 - date: 2020-07-13 14:00
   title: The pandemic, Zoom, and What’s next for RTC
   speaker:
@@ -22,40 +21,32 @@
   description: |
     The pandemic has increased the reliance on real time communications, but is this newfound usage evenly distributed? What industries, segments, and companies are leading the pack and what can we learn from them? Zoom in particular has become a household name, despite many high-profile issues. Can you replicate some of their success?  What’s next for the RTC industry after the pandemic? I will attempt to answer these questions and more with a data-driven approach.
   slug: the-pandemic-zoom-and-whats-next-for-rtc
+  youtubeid: "-HguGEBZVFE"
 - date: 2020-07-13 18:00
   title: "Pion: Solving Production RTC problems with composable Go libraries"
   speaker:
     - sean
   description: |
-    Pion is used for all the traditional RTC problems (SFUs, Protocol Bridging,
-    Clients). Instead lets talk about the unique production problems. Come learn why
-    Pion is the software for large scale broadcasting, self driving cars and robots.  This
-    is what developers do when real world constraints hit.
+    Pion is used for all the traditional RTC problems (SFUs, Protocol Bridging, Clients). Instead lets talk about the unique production problems. Come learn why Pion is the software for large scale broadcasting, self driving cars and robots.  This is what developers do when real world constraints hit.
   slug: pion-solving-production-rtc-problems-with-composable-go-libraries
+  youtubeid: "3fRw4uKakLM"
 - date: 2020-07-14 06:00
-  title: HOMER for webRTC
+  title: HOMER for WebRTC
   speaker:
     - lorenzomangani
     - alexandr
   description: |
-    HOMER is there for you, be it VoIP or RTC or your own protocols. Learn
-    how to install and leverage release 7.7 for your stack in minutes and how to integrate
-    its data  with your services.
+    HOMER is there for you, be it VoIP or RTC or your own protocols. Learn how to install and leverage release 7.7 for your stack in minutes and how to integrate its data  with your services.
   slug: homer-for-webrtc
+  youtubeid: "_wh9oCerUkE"
 - date: 2020-07-14 10:00
   title: "Jitsi: State of the Union 2020"
   speaker:
     - saghul
   description: |
-    2020 shall be remembered as one of the strangest years in history. The
-    current world events have pushed the envelope of remote working and the
-    tools required to do so. As the makers of one of the most comprehensive
-    video collaboration platforms in the industry, the Jitsi team at 8x8 has
-    been hard at work making sure our users got the best video experience
-    just when they needed it the most. In this presentation we will explore
-    the latest developments in our projects, how the world events affected
-    us and what the future holds.
+    2020 shall be remembered as one of the strangest years in history. The current world events have pushed the envelope of remote working and the tools required to do so. As the makers of one of the most comprehensive video collaboration platforms in the industry, the Jitsi team at 8x8 has been hard at work making sure our users got the best video experience just when they needed it the most. In this presentation we will explore the latest developments in our projects, how the world events affected us and what the future holds.
   slug: jitsi
+  youtubeid: nHH3WLytuTk
 - date: 2020-07-14 14:00
   title: Cyara
   speaker:
@@ -64,27 +55,24 @@
   description: |
     Geoff and Dan get together and chat about Cyara and what they've been up to among other things.
   slug: cyara-interview
+  youtubeid: "gYtIsVnV1W0"
 - date: 2020-07-14 18:00
   title: Building a Bigger Badder B2BUA
   speaker:
     - phillip
     - andriy
   description: |
-    We have rewritten our B2BUA component into GoLang and the net results
-    have yielded some impressive results.  This talk will cover what tasks B2BUA handles
-    and how Golang allows for these new efficiencies and the quantified results from
-    our initial testing of the new component.
+    We have rewritten our B2BUA component into GoLang and the net results have yielded some impressive results.  This talk will cover what tasks B2BUA handles and how Golang allows for these new efficiencies and the quantified results from our initial testing of the new component.
   slug: building-a-bigger-badder-b2bua
+  youtubeid: "VYELywfpd6c"
 - date: 2020-07-15 06:00
   title: How to test a webRTC service on your own....
   speaker:
     - tim
   description: |
-    How can you test a multi user WebRTC service while working in your home
-    office ?
+    How can you test a multi user WebRTC service while working in your home office?
 
-    I'll show how you can (ab)use serverless cloud technology to simulate
-    many users of your service, at a surprisingly low cost.
+    I'll show how you can (ab)use serverless cloud technology to simulate many users of your service, at a surprisingly low cost.
   slug: how-to-test-a-webrtc-service-on-your-own
 - date: 2020-07-15 10:00
   title: "Dialing back Telecoms: How to drive our industry back towards an open ecosystem."
@@ -138,9 +126,7 @@
   speaker:
     - fred
   description: |
-    Kamailio, the Open Source SIP Server, enables communication across SIP
-    and WebRTC allowing you to build whatever your heart desires. Kamailio creates
-    a solid foundation allowing you to build and grow as needed.
+    Kamailio, the Open Source SIP Server, enables communication across SIP and WebRTC allowing you to build whatever your heart desires. Kamailio creates a solid foundation allowing you to build and grow as needed.
   slug: kamailio-for-rtc-stability-scaling-and-security
 - date: 2020-07-17 06:00
   title: Using NodeRED as a Visual Asterisk Manager
@@ -168,17 +154,12 @@
   speaker:
     - davehorton
   description: |
-    Jambonz is an open source CPaaS platform that you can run on your own
-    infrastructure.  It is targeted at CSPs and privacy-conscious enterprises.  It
-    is modest in goals, small in size, simple to deploy, and easy to get your arms
-    around.  This talk will describe why it's needed and give a demo.
+    Jambonz is an open source CPaaS platform that you can run on your own infrastructure.  It is targeted at CSPs and privacy-conscious enterprises.  It is modest in goals, small in size, simple to deploy, and easy to get your arms around.  This talk will describe why it's needed and give a demo.
   slug: jambonz-the-little-open-source-cpaas
 - date: 2020-07-17 18:00
   title: "Carrier-Grade: what does it mean to us, practically speaking?"
   speaker:
     - max
   description: |
-    Our belief is that software reliability is not just an "another feature"
-    or "selling point" but ideology and the process. We will share few things and
-    interesting techniques that we have discovered while implementing this vision.
+    Our belief is that software reliability is not just an "another feature" or "selling point" but ideology and the process. We will share few things and interesting techniques that we have discovered while implementing this vision.
   slug: carrier-grade-what-does-it-mean-to-us-practically-speaking

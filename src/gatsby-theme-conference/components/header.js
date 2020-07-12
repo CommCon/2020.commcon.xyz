@@ -36,6 +36,7 @@ export default props =>
       <NavLink as={Link} to='/#venue'>YouTube</NavLink>
       <NavLink as={Link} to='/#matrix'>Community</NavLink>
       <NavLink as={Link} to='/#sponsors'>Sponsors</NavLink>
+      <NavLink as={Link} to='/live'>LIVE</NavLink>
     </DesktopOnly>
     <div sx={{ mx: 'auto' }} />
     <Button href='#venue'>
