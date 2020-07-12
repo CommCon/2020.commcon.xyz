@@ -1,31 +1,6 @@
 [[redirects]]
-  from = "http://commcon.xyz"
-  to = "https://2020.commcon.xyz"
-  status = 301
-
-[[redirects]]
-  from = "https://commcon.xyz"
-  to = "https://2020.commcon.xyz"
-  status = 200
-
-[[redirects]]
-  from = "http://commcon.xyz/*"
-  to = "https://2020.commcon.xyz/:splat"
-  status = 200
-
-[[redirects]]
-  from = "https://commcon.xyz/*"
-  to = "https://2020.commcon.xyz/:splat"
-  status = 200
-
-[[redirects]]
-  from = "http://www.commcon.xyz/*"
-  to = "https://2020.commcon.xyz/:splat"
-  status = 200
-
-[[redirects]]
-  from = "https://www.commcon.xyz/*"
-  to = "https://2020.commcon.xyz/:splat"
+  from = "https://2020.commcon.xyz/*"
+  to = "https://www.commcon.xyz/:splat"
   status = 200
 
 [[headers]]
