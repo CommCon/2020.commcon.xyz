@@ -520,6 +520,34 @@ index bce310c..8c79bb3 100644
          </Styled.h1>
          {Object.keys(days).map(date => (
            <div key={date}>
+diff --git a/node_modules/gatsby-theme-conference/src/layouts/speakers.js b/node_modules/gatsby-theme-conference/src/layouts/speakers.js
+index 7466ba5..8e7bc31 100644
+--- a/node_modules/gatsby-theme-conference/src/layouts/speakers.js
++++ b/node_modules/gatsby-theme-conference/src/layouts/speakers.js
+@@ -22,13 +22,16 @@ export default ({
+           sx={{
+             justifyContent: 'center',
+           }}>
+-          {speakers.map(speaker => (
+-            <SpeakerCard
+-              key={speaker.id}
+-              as='li'
+-              {...speaker}
+-            />
+-          ))}
++          {speakers.map(speaker => {
++            if (!speaker.dontshow)
++            return (
++              <SpeakerCard
++                key={speaker.id}
++                as='li'
++                {...speaker}
++              />
++            )
++          })}
+         </FlexList>
+       </Container>
+     </Layout>
 diff --git a/node_modules/gatsby-theme-conference/src/pages/index.js b/node_modules/gatsby-theme-conference/src/pages/index.js
 index 91b3290..5fd60f9 100644
 --- a/node_modules/gatsby-theme-conference/src/pages/index.js
