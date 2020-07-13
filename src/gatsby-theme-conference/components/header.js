@@ -39,7 +39,7 @@ export default props =>
       <NavLink as={Link} to='/live'>LIVE</NavLink>
     </DesktopOnly>
     <div sx={{ mx: 'auto' }} />
-    <Button href='#venue'>
+    <Button href='/#venue'>
       Attend
     </Button>
   </Fragment>
