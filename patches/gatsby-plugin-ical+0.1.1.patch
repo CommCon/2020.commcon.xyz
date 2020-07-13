@@ -1,5 +1,5 @@
 diff --git a/node_modules/gatsby-plugin-ical/internals.js b/node_modules/gatsby-plugin-ical/internals.js
-index dba91f1..b46609e 100644
+index dba91f1..eec29e3 100644
 --- a/node_modules/gatsby-plugin-ical/internals.js
 +++ b/node_modules/gatsby-plugin-ical/internals.js
 @@ -1,4 +1,5 @@
@@ -17,11 +17,10 @@ index dba91f1..b46609e 100644
      var domain = options.domain;
  
      if (!edges || edges.length < 1) {
-@@ -26,13 +27,19 @@ var runQuery = function runQuery(handler, query, options) {
+@@ -26,13 +27,18 @@ var runQuery = function runQuery(handler, query, options) {
      var events = [];
      edges.map(function (_ref, index) {
        var node = _ref.node;
-+
 +      var speakers = [];
 +      node.speaker.forEach(speaker => {
 +        speakers.push(speaker.name);
@@ -35,14 +34,14 @@ index dba91f1..b46609e 100644
 -        description: node.excerpt,
 -        url: domain + node.frontmatter.path
 +        start: moment.utc(node.date),
-+        end: moment.utc(node.date).add(1, 'hour'),
++        end: node.end && moment.utc(node.end) || moment.utc(node.date).add(1, 'hour'),
 +        summary: `${speakers.join(' & ')} - ${node.title}`,
 +        description: node.description,
 +        url: domain + node.slug
        };
        events.push(e);
      });
-@@ -63,7 +70,7 @@ var defaultOptions = {
+@@ -63,7 +69,7 @@ var defaultOptions = {
    },
    event: {
      uid: 'id',

@@ -47,7 +47,7 @@ module.exports = {
                 title
                 description
                 date
-                end: date
+                end: enddate
               }
             }
           }

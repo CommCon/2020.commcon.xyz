@@ -1,10 +1,19 @@
 - date: 2020-07-13 06:00
+  enddate: 2020-07-13 06:15
+  title: Intro to Day One
+  speaker: ["danjenkins"]
+  description: |
+    Intro to day one
+  slug: intro-to-day-one
+  youtubeid: QzM0IZEyVTE
+- date: 2020-07-13 06:15
   title: Turning live events to virtual with Janus
   speaker: ["lorenzominiero"]
   description: |
     Up until recently, a good chunk of our business consisted in streaming live events (e.g., IETF meetings) via WebRTC, facilitating remote participation. Then the world changed, and so must we. This talk will describe some of the strategies we followed to host completely virtual events using Janus.
   slug: turning-live-events-to-virtual-with-janus
   youtubeid: oSZw90guaUw
+  slidedeckUrl: "https://www.slideshare.net/LorenzoMiniero/turning-live-events-to-virtual-with-janus"
 - date: 2020-07-13 10:00
   title: Teluu
   speaker:
@@ -31,6 +40,14 @@
   slug: pion-solving-production-rtc-problems-with-composable-go-libraries
   youtubeid: "3fRw4uKakLM"
 - date: 2020-07-14 06:00
+  enddate: 2020-07-14 06:15
+  title: Intro to Day Two
+  speaker: ["danjenkins"]
+  description: |
+    Intro to day two
+  slug: intro-to-day-two
+  youtubeid: yJzC7lsZzuA
+- date: 2020-07-14 06:15
   title: HOMER for WebRTC
   speaker:
     - lorenzomangani
@@ -66,6 +83,14 @@
   slug: building-a-bigger-badder-b2bua
   youtubeid: "VYELywfpd6c"
 - date: 2020-07-15 06:00
+  enddate: 2020-07-15 06:15
+  title: Intro to Day Three
+  speaker: ["danjenkins"]
+  description: |
+    Intro to day three
+  slug: intro-to-day-three
+  youtubeid: -TiWlIU-b9E
+- date: 2020-07-15 06:15
   title: How to test a webRTC service on your own....
   speaker:
     - tim
@@ -100,6 +125,14 @@
     This session shows where people go wrong - it all starts way before the presentation itself...
   slug: let-the-geek-speak-via-video
 - date: 2020-07-16 06:00
+  enddate: 2020-07-16 06:15
+  title: Intro to Day Four
+  speaker: ["danjenkins"]
+  description: |
+    Intro to day four
+  slug: intro-to-day-four
+  youtubeid: QnugCMxP8p4
+- date: 2020-07-16 06:15
   title: Impact of media quality during shelter in place.
   speaker:
     - varun
@@ -129,6 +162,14 @@
     Kamailio, the Open Source SIP Server, enables communication across SIP and WebRTC allowing you to build whatever your heart desires. Kamailio creates a solid foundation allowing you to build and grow as needed.
   slug: kamailio-for-rtc-stability-scaling-and-security
 - date: 2020-07-17 06:00
+  enddate: 2020-07-17 06:15
+  title: Intro to Day Five
+  speaker: ["danjenkins"]
+  description: |
+    Intro to day five
+  slug: intro-to-day-five
+  youtubeid: 5g2B_AUSlY4
+- date: 2020-07-17 06:15
   title: Using NodeRED as a Visual Asterisk Manager
   speaker:
     - sammachin

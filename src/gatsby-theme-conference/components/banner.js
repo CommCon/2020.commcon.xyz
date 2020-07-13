@@ -56,7 +56,7 @@ export default props =>
             }}>
             We've stripped back our schedule entirely and have 20 sessions spread out across 5 days across multiple timezones so that everyone can take part. Sessions are pre recorded and "Premiered" via YouTube with Q&A and conversation with other attendees/sponsors happening directly after each session.
           </Styled.p>
-          <Button href='#purchase'>
+          <Button href='#venue'>
             Attend
           </Button>
         </div>

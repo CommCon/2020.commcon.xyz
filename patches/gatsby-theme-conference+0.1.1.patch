@@ -508,10 +508,17 @@ index 0000000..568d060
 +  )
 +}
 diff --git a/node_modules/gatsby-theme-conference/src/layouts/schedule.js b/node_modules/gatsby-theme-conference/src/layouts/schedule.js
-index bce310c..8c79bb3 100644
+index bce310c..e197690 100644
 --- a/node_modules/gatsby-theme-conference/src/layouts/schedule.js
 +++ b/node_modules/gatsby-theme-conference/src/layouts/schedule.js
-@@ -18,7 +18,7 @@ export default ({
+@@ -1,5 +1,6 @@
+ /** @jsx jsx */
+ import { Styled, jsx, Container } from 'theme-ui'
++import { Link } from 'gatsby'
+ import groupBy from 'lodash.groupby'
+ import Layout from '../components/layout'
+ import List from '../components/list'
+@@ -18,7 +19,7 @@ export default ({
            sx={{
              mb: 5,
            }}>
@@ -520,6 +527,19 @@ index bce310c..8c79bb3 100644
          </Styled.h1>
          {Object.keys(days).map(date => (
            <div key={date}>
+@@ -34,6 +35,12 @@ export default ({
+             </List>
+           </div>
+         ))}
++        <Styled.a
++          as={Link}
++          target="_blank"
++          href='/calendar.ics'>
++          Add to your calendar
++        </Styled.a>
+       </Container>
+     </Layout>
+   )
 diff --git a/node_modules/gatsby-theme-conference/src/layouts/speakers.js b/node_modules/gatsby-theme-conference/src/layouts/speakers.js
 index 7466ba5..8e7bc31 100644
 --- a/node_modules/gatsby-theme-conference/src/layouts/speakers.js
@@ -695,10 +715,10 @@ index 94fbe9b..f1f6f3e 100644
      }
 diff --git a/node_modules/gatsby-theme-conference/src/templates/session.js b/node_modules/gatsby-theme-conference/src/templates/session.js
 new file mode 100644
-index 0000000..b16571d
+index 0000000..be49b6a
 --- /dev/null
 +++ b/node_modules/gatsby-theme-conference/src/templates/session.js
-@@ -0,0 +1,180 @@
+@@ -0,0 +1,225 @@
 +import React from "react"
 +import { graphql } from "gatsby"
 +import Layout from "../components/layout"
@@ -708,6 +728,13 @@ index 0000000..b16571d
 +import SpeakerCard from '../components/speaker-card'
 +import moment  from 'moment-timezone'
 +import Helmet from 'react-helmet'
++import IconLink from '../components/icon-link'
++import useWebShare from 'react-use-web-share'
++
++import {
++  Youtube,
++  Folder,
++} from 'react-feather'
 +
 +export default function SchedulePage({ data }) {
 +  const schedule = data.scheduleYaml
@@ -726,6 +753,8 @@ index 0000000..b16571d
 +  let pacificDiff = moment.utc(schedule.datetime).tz('America/Los_Angeles').format('D') - moment.utc(schedule.datetime).format('D')
 +  let australiaDiff = moment.utc(schedule.datetime).tz('Australia/Melbourne').format('D') - moment.utc(schedule.datetime).format('D')
 +  let localDiff = moment.utc(schedule. datetime).tz(localTimezoneGuess).format('D') - moment.utc(schedule.datetime).format('D')
++
++  const { isSupported, loading, share } = useWebShare();
 +
 +  return (
 +    <Layout>
@@ -755,9 +784,9 @@ index 0000000..b16571d
 +              width: "100%"
 +            }}
 +          >
-+            <Styled.h2>
-+              Airing {schedule.date}
-+            </Styled.h2>
++            <Styled.h3>
++              {schedule.date}
++            </Styled.h3>
 +            <FlexList>
 +              <div
 +                style={{
@@ -828,6 +857,18 @@ index 0000000..b16571d
 +              }}>
 +              {schedule.description}
 +            </Styled.p>
++            <Flex mx={-2}>
++              {schedule.youtubeid && (
++                <IconLink href={`https://www.youtube.com/watch?v=${schedule.youtubeid}`}>
++                  <Youtube />
++                </IconLink>
++              )}
++              {schedule.slidedeckUrl && (
++                <IconLink href={schedule.slidedeckUrl}>
++                  <Folder />
++                </IconLink>
++              )}
++            </Flex>
 +          </div>
 +          {schedule.youtubeid && (
 +            <YouTube containerClassName='youtubeContainer' videoId={schedule.youtubeid} opts={opts} />
@@ -850,6 +891,29 @@ index 0000000..b16571d
 +              />
 +            )
 +          })}
++          { !loading && isSupported && (
++          <Box
++            sx={{
++              display: 'inline-block',
++              p: 2,
++              color: 'inherit',
++              textDecoration: 'none',
++              '&:hover': {
++                color: 'primary',
++              },
++              '& > svg': {
++                display: 'inline-block',
++                verticalAlign: 'middle',
++              }
++            }}
++          >
++            <Share2 onClick={share.bind(share, {
++              title: schedule.title,
++              text: schedule.title,
++              url: `/session/${slug}`
++            })}/>
++          </Box>
++        )}
 +        </FlexList>
 +      </Container>
 +    </Layout>
@@ -864,6 +928,7 @@ index 0000000..b16571d
 +    title
 +    description
 +    youtubeid
++    slidedeckUrl
 +    speaker {
 +      id
 +      name

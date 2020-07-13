@@ -1,16 +1,20 @@
 /** @jsx jsx */
 import { Link } from 'gatsby'
-import { jsx, Styled, Flex, Container } from 'theme-ui'
-import { Twitter, Instagram, Youtube, Facebook } from 'react-feather'
+import { jsx, Styled, Flex, Container, Box } from 'theme-ui'
+import { Twitter, Instagram, Youtube, Facebook, Share2 } from 'react-feather'
 import {
     List,
     NavLink,
     IconLink,
     useSiteMetadata
   } from 'gatsby-theme-conference'
+import useWebShare from 'react-use-web-share'
+
 
 export default props => {
   const { twitter, instagram, youtube, facebook } = useSiteMetadata()
+  const { isSupported, loading, share } = useWebShare();
+
   return (
     <Container>
       <Flex
@@ -51,9 +55,31 @@ export default props => {
             </IconLink>
           )}
           {facebook && (
-            <IconLink title='Watch on YouTube' href={facebook}>
+            <IconLink title='Join us on Facebook' href={facebook}>
               <Facebook />
             </IconLink>
+          )}
+          { !loading && isSupported && (
+            <Box
+              sx={{
+                display: 'inline-block',
+                p: 2,
+                color: 'inherit',
+                textDecoration: 'none',
+                '&:hover': {
+                  color: 'primary',
+                },
+                '& > svg': {
+                  display: 'inline-block',
+                  verticalAlign: 'middle',
+                }
+              }}
+            >
+              <Share2 onClick={share.bind(share, {
+                title: 'Commcon Virtual 2020',
+                text: 'CommCon Virtual 2020',
+              })}/>
+            </Box>
           )}
         </div>
       </Flex>
