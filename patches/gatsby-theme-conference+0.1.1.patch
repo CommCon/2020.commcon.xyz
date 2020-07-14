@@ -715,14 +715,14 @@ index 94fbe9b..f1f6f3e 100644
      }
 diff --git a/node_modules/gatsby-theme-conference/src/templates/session.js b/node_modules/gatsby-theme-conference/src/templates/session.js
 new file mode 100644
-index 0000000..be49b6a
+index 0000000..ac19145
 --- /dev/null
 +++ b/node_modules/gatsby-theme-conference/src/templates/session.js
-@@ -0,0 +1,225 @@
+@@ -0,0 +1,227 @@
 +import React from "react"
 +import { graphql } from "gatsby"
 +import Layout from "../components/layout"
-+import { Styled, Container, Flex } from 'theme-ui'
++import { Styled, Container, Flex, Box } from 'theme-ui'
 +import YouTube from 'react-youtube'
 +import FlexList from '../components/flex-list'
 +import SpeakerCard from '../components/speaker-card'
@@ -734,6 +734,7 @@ index 0000000..be49b6a
 +import {
 +  Youtube,
 +  Folder,
++  Share2
 +} from 'react-feather'
 +
 +export default function SchedulePage({ data }) {
@@ -868,6 +869,29 @@ index 0000000..be49b6a
 +                  <Folder />
 +                </IconLink>
 +              )}
++              { !loading && isSupported && (
++                <Box
++                  sx={{
++                    display: 'inline-block',
++                    p: 2,
++                    color: 'inherit',
++                    textDecoration: 'none',
++                    '&:hover': {
++                      color: 'primary',
++                    },
++                    '& > svg': {
++                      display: 'inline-block',
++                      verticalAlign: 'middle',
++                    }
++                  }}
++                >
++                  <Share2 onClick={share.bind(share, {
++                    title: schedule.title,
++                    text: schedule.title,
++                    url: `/session/${schedule.slug}`
++                  })}/>
++                </Box>
++              )}
 +            </Flex>
 +          </div>
 +          {schedule.youtubeid && (
@@ -891,29 +915,6 @@ index 0000000..be49b6a
 +              />
 +            )
 +          })}
-+          { !loading && isSupported && (
-+          <Box
-+            sx={{
-+              display: 'inline-block',
-+              p: 2,
-+              color: 'inherit',
-+              textDecoration: 'none',
-+              '&:hover': {
-+                color: 'primary',
-+              },
-+              '& > svg': {
-+                display: 'inline-block',
-+                verticalAlign: 'middle',
-+              }
-+            }}
-+          >
-+            <Share2 onClick={share.bind(share, {
-+              title: schedule.title,
-+              text: schedule.title,
-+              url: `/session/${slug}`
-+            })}/>
-+          </Box>
-+        )}
 +        </FlexList>
 +      </Container>
 +    </Layout>
@@ -929,6 +930,7 @@ index 0000000..be49b6a
 +    description
 +    youtubeid
 +    slidedeckUrl
++    slug
 +    speaker {
 +      id
 +      name
