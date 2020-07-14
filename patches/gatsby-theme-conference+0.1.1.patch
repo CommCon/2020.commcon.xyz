@@ -715,10 +715,10 @@ index 94fbe9b..f1f6f3e 100644
      }
 diff --git a/node_modules/gatsby-theme-conference/src/templates/session.js b/node_modules/gatsby-theme-conference/src/templates/session.js
 new file mode 100644
-index 0000000..ac19145
+index 0000000..23a3e32
 --- /dev/null
 +++ b/node_modules/gatsby-theme-conference/src/templates/session.js
-@@ -0,0 +1,227 @@
+@@ -0,0 +1,221 @@
 +import React from "react"
 +import { graphql } from "gatsby"
 +import Layout from "../components/layout"
@@ -791,17 +791,15 @@ index 0000000..ac19145
 +            <FlexList>
 +              <div
 +                style={{
-+                  width: "16%"
++                  width: "33%"
 +                }}
 +              >
 +                <Styled.h3>AEST</Styled.h3>
-+                <p>{moment.utc(schedule.datetime).tz('Australia/Melbourne').format('HH:mm')}{australiaDiff !== 0 && (
-+                  `(${Math.sign(australiaDiff) ? '+' : '-'} ${australiaDiff})`)}
-+                </p>
++                <p>{moment.utc(schedule.datetime).tz('Australia/Melbourne').format('HH:mm')}{australiaDiff !== 0 && (`(${Math.sign(australiaDiff) ? '+' : '-'}${australiaDiff})`)}</p>
 +              </div>
 +              <div
 +                style={{
-+                  width: "16%"
++                  width: "33%"
 +                }}
 +              >
 +                <Styled.h3>CEST</Styled.h3>
@@ -809,7 +807,7 @@ index 0000000..ac19145
 +              </div>
 +              <div
 +                style={{
-+                  width: "16%"
++                  width: "33%"
 +                }}
 +              >
 +                <Styled.h3>BST</Styled.h3>
@@ -817,7 +815,7 @@ index 0000000..ac19145
 +              </div>
 +              <div
 +                style={{
-+                  width: "16%"
++                  width: "33%"
 +                }}
 +              >
 +                <Styled.h3>EDT</Styled.h3>
@@ -825,23 +823,19 @@ index 0000000..ac19145
 +              </div>
 +              <div
 +                style={{
-+                  width: "16%"
++                  width: "33%"
 +                }}
 +              >
 +                <Styled.h3>PDT</Styled.h3>
-+                <p>{moment.utc(schedule.datetime).tz('America/Los_Angeles').format('HH:mm')}{pacificDiff !== 0 && (
-+                  `(${pacificDiff})`)}
-+                </p>
++                <p>{moment.utc(schedule.datetime).tz('America/Los_Angeles').format('HH:mm')}{pacificDiff !== 0 && (`(${pacificDiff})`)}</p>
 +              </div>
 +              <div
 +                style={{
-+                  width: "16%"
++                  width: "33%"
 +                }}
 +              >
 +                <Styled.h3>Local</Styled.h3>
-+                <p>{moment.utc(schedule.datetime).tz(localTimezoneGuess).format('HH:mm')} Local {localDiff !== 0 && (
-+                  `(${localDiff})`)}
-+                </p>
++                <p>{moment.utc(schedule.datetime).tz(localTimezoneGuess).format('HH:mm')}{localDiff !== 0 && (`(${localDiff})`)}</p>
 +              </div>
 +            </FlexList>
 +          </div>
