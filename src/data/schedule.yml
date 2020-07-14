@@ -99,6 +99,7 @@
 
     I'll show how you can (ab)use serverless cloud technology to simulate many users of your service, at a surprisingly low cost.
   slug: how-to-test-a-webrtc-service-on-your-own
+  youtubeid: N9AfkUarslY
 - date: 2020-07-15 10:00
   title: "Dialing back Telecoms: How to drive our industry back towards an open ecosystem."
   speaker:
@@ -108,6 +109,7 @@
 
     Telecoms as an industry has historically been one of the most open ecosystems with interoperability being achievable.  We’re now in a position where this industry has been leapfrogged by huge strives in the Cloud marketplace, to completely revolutionize the interconnectivity of systems.
   slug: dialing-back-telecoms-how-to-drive-our-industry-back-towards-an-open-ecosystem
+  youtubeid: EWZWPwC-5EY
 - date: 2020-07-15 14:00
   title: Voxbone
   speaker:
@@ -124,6 +126,7 @@
     Making presentations via video meeting and webinar tools has become very popular indeed!  Many presenters make cringe-inducing mistakes and therefore lose any power that might have been in their message.
     This session shows where people go wrong - it all starts way before the presentation itself...
   slug: let-the-geek-speak-via-video
+  youtubeid: uG2Rp_bh8U0
 - date: 2020-07-16 06:00
   enddate: 2020-07-16 06:15
   title: Intro to Day Four
@@ -139,6 +142,7 @@
   description: |
     During this year, millions of people around the world have been experiencing an unprecedented change in their daily routines due to the global pandemic caused by the novel COVID-19 virus. Like many countries, local governments across North America responded to the pandemic by enacting shelter-in-place (ShIP) and encouraging social distancing to reduce the community spread of the virus. In this period we’ve become more reliant on many forms of electronic communications, such as audio and video conferencing which have been made widely available by accessible apps. At http://callstats.io, millions of calls have been analyzed from over 1000 WebRTC apps to help paint a picture of some of the changes to the usage and call quality in the United States over a 4-month period.
   slug: impact-of-media-quality-during-shelter-in-place
+  youtubeid: I7IwmXBaQmI
 - date: 2020-07-16 10:00
   title: "Recovery, Restoration and Resilence-managing your mental health though COVID-19 and beyond"
   speaker:
@@ -147,6 +151,7 @@
     Mental wellbeing at work has been a big topic of the last few years but now with Covid 19 we are all facing huge changes to the way we work and communicate with others as well as the stress of living through a major pandemic.
     In this talk we will hear some of the ways the NHS have been using past crisis like the Ebola outbreak, war in Afghanistan and the Manchester Terrorist Bombings to consider the types of mental health support needed both for the general population and those working through the crisis. Natalie will share some practical advice around dealing with isolation, video call fatigue and the very normal but strong effect the pandemic is having on our psychological health and how we can all recover, restore and build our resilience.
   slug: recovery-restoration-and-resilence-managing-your-mental-health-though-covid-19-and-beyond
+  youtubeid: YeAfpJUxU2o
 - date: 2020-07-16 14:00
   title: "P2P Matrix: Where we're going we don't need servers!"
   speaker:
@@ -154,6 +159,7 @@
   description: |
     Matrix is an open protocol for decentralised communication, and since the start of 2020 the team has been seriously experimenting with evolving Matrix to work in peer-to-peer environments, giving users full control of their communications without any dependencies on the internet or service providers. In this talk we'll show off the latest implementations, and discuss how Matrix may become a hybrid federated/p2p network in future
   slug: p2p-matrix-where-were-going-we-dont-need-servers
+  youtubeid: QHtw92V2KJQ
 - date: 2020-07-16 18:00
   title: Kamailio for RTC Stability, Scaling, and Security
   speaker:
@@ -179,6 +185,7 @@
     I've started to experiment with what it would look like to manage asterisk via ARI inside NodeRED, trying to get the same level of power and flexibility from code based config with the ease of use from a visual tool.
     This talk is mostly going to be me asking a bunch of questions and showing the limited progress so far, so I would encourage people to join the discussion after the talk.
   slug: using-nodered-as-a-visual-asterisk-manager
+  youtubeid: yCLomkvty4c
 - date: 2020-07-17 10:00
   title: "SFrame.js: End to end encryption for everyone"
   speaker:
@@ -190,6 +197,7 @@
 
     Last, we will be covering a 1000ft view of what you would need to do to add e2ee support to your service SFrame.js, the pure javascript implementation of SFrame based on webcrypto.
   slug: sframejs-end-to-end-encryption-for-everyone
+  youtubeid: a0vhHmONWlw
 - date: 2020-07-17 14:00
   title: "jambonz: the \"little\" open source CPaaS"
   speaker:
