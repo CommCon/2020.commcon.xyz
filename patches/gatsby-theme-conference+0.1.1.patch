@@ -715,7 +715,7 @@ index 94fbe9b..f1f6f3e 100644
      }
 diff --git a/node_modules/gatsby-theme-conference/src/templates/session.js b/node_modules/gatsby-theme-conference/src/templates/session.js
 new file mode 100644
-index 0000000..23a3e32
+index 0000000..41a460f
 --- /dev/null
 +++ b/node_modules/gatsby-theme-conference/src/templates/session.js
 @@ -0,0 +1,221 @@
@@ -745,7 +745,7 @@ index 0000000..23a3e32
 +    width: '100%',
 +    playerVars: {
 +      // https://developers.google.com/youtube/player_parameters
-+      autoplay: 1,
++      autoplay: 0,
 +    },
 +  }
 +
