@@ -168,6 +168,7 @@
   description: |
     Kamailio, the Open Source SIP Server, enables communication across SIP and WebRTC allowing you to build whatever your heart desires. Kamailio creates a solid foundation allowing you to build and grow as needed.
   slug: kamailio-for-rtc-stability-scaling-and-security
+  youtubeid: FGZF7dYdRng
 - date: 2020-07-17 06:00
   enddate: 2020-07-17 06:15
   title: Intro to Day Five
@@ -206,6 +207,7 @@
   description: |
     Jambonz is an open source CPaaS platform that you can run on your own infrastructure.  It is targeted at CSPs and privacy-conscious enterprises.  It is modest in goals, small in size, simple to deploy, and easy to get your arms around.  This talk will describe why it's needed and give a demo.
   slug: jambonz-the-little-open-source-cpaas
+  youtubeid: qWz9CM2_HUs
 - date: 2020-07-17 18:00
   title: "Carrier-Grade: what does it mean to us, practically speaking?"
   speaker:
@@ -213,3 +215,4 @@
   description: |
     Our belief is that software reliability is not just an "another feature" or "selling point" but ideology and the process. We will share few things and interesting techniques that we have discovered while implementing this vision.
   slug: carrier-grade-what-does-it-mean-to-us-practically-speaking
+  youtubeid: DjpUvWntzOE
