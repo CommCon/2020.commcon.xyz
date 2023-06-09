@@ -11,7 +11,7 @@
     "postinstall": "patch-package"
   },
   "dependencies": {
-    "gatsby": "^2.1.19",
+    "gatsby": "^4.25.7",
     "gatsby-plugin-google-fonts": "^1.0.0",
     "gatsby-plugin-ical": "^0.1.1",
     "gatsby-plugin-react-helmet": "^3.3.9",
